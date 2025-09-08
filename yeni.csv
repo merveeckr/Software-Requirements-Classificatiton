@@ -1,0 +1,504 @@
+Requirement,Appropriate,Complete,Conforming,Correct,Feasible,Necessary,Singular,Unambiguous,Verifiable
+"Sistem, Olayları veya Aktiviteleri görüntüleyecektir.",1,0,0,1,1,1,1,0,0
+"Görüntüde iki bölge olacaktır ekranın sol 2/3’ü grafiksel, sağ 1/3’ü veri tablosudur.",1,1,0,1,1,1,1,1,1
+"Hem grafikteki düğümlerde hem de tablodaki satırlarda görüntülenen veriler MSEL Özet verileri olacaktır.",1,1,0,1,1,1,1,1,1
+"Görüntünün tablo tarafı 2 bölgeye ayrılacaktır sıralı ve zamansal.",1,1,0,1,1,1,1,1,1
+"Tablonun üst 1/4’ü sıralı gerçekleşecek olayları içerecektir.",1,1,0,1,1,1,1,1,1
+"Tablonun alt 3/4’ü mevcut zamana göre ilişkili olayları içerecektir.",1,1,0,1,1,1,1,1,1
+"Sistem, olayları mevcut zamandan sapmalarına göre renk kodlarıyla gösterecektir.",1,1,0,1,1,1,1,1,1
+"Sistem, Aktivite veya Olay verilerinde yapılan değişikliklerin geçmiş raporunu sağlayacaktır.",1,1,0,1,1,1,1,1,1
+"Sistemin görünümü ve kullanılabilirliği akıllı cihazın kullanıcı arayüzü standartlarına uygun olacaktır.",1,1,1,1,1,1,1,1,1
+"Kullanıcı arayüzünde standart menüler ve gezinme butonları bulunacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, MLS’deki yeni mülk ilanlarını güncelleyecek veya oluşturacaktır.",1,1,0,1,1,1,1,1,1
+"Emlakçı, mülk kriterlerine dayalı bir CMA raporu oluşturabilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli üyeleri ders dizisine klinik dersler veya bölümler ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, başlama ayı ve yılı ile tanımlanmış yeni bir grup (cohort) ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, hemşirelik bölümüne yeni dersler ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Bir ders, klinik olmayan veya klinik ders olabilir.",1,0,0,1,1,1,1,1,0
+"Klinik olmayan ders; ders adı, derslik ihtiyaçları ve eğitmen ihtiyaçlarını belirtecektir.",1,1,0,1,1,1,1,1,1
+"Klinik ders; ders adı, derslik ihtiyaçları, klinik saha ihtiyaçları, ders eğitmeni ihtiyaçları ve klinik laboratuvar eğitmeni ihtiyaçlarını belirtecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri/Hemşirelik Personeli yeni bir Çalışma Programı (Program of Study) oluşturabilecektir.",1,1,0,1,1,1,1,1,1
+"Çalışma Programı, bir program adı ve tamamlanması gereken zorunlu derslerden (klinik ve klinik olmayan) oluşacaktır.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, Çalışma Programı için hangi derslerin zorunlu olduğunu belirleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Sistem Program Yöneticileri/Hemşirelik Personeli’nin planlama amaçları için tüm programların tüm grupları için belirli bir dönemde ihtiyaç duyulan derslerin raporunu gösterebilecektir.",1,1,1,1,1,1,0,1,1
+"Gerekli ders raporu; açılacak dersler, gereken bölüm sayısı, gereken laboratuvar sayısı ve ihtiyaç duyulan derslik türlerini içerecektir.",1,1,1,1,1,1,1,1,1
+"Belirli bir grup için dersler, gün ve saat bakımından çakışmayacaktır.",1,1,1,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli sisteme yeni bir klinik saha ekleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, Internet Explorer 5.5 ve üzerini desteklemelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, Mozilla Firefox 1.0 ve üzerini desteklemelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, Choice Parts Sistemi ile arayüz oluşturmalıdır. Bu sistem geri dönüştürülmüş parça verilerini sağlar.",1,1,1,1,1,1,1,1,1
+"Ürün, tüm ortamlarda mevcut donanım üzerinde çalışmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal Mimari yönergelere uygun olmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal Kullanıcı Arayüzü Yönergelerine uymalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal renk şemasına uymalıdır.",1,1,1,1,1,1,1,1,1
+"Ürünün görünümü profesyonel olmalıdır.",0,0,0,0,1,0,1,0,0
+"Yazılım ürününün Windows veya Linux platformlarında çalışması beklenmektedir.",1,1,1,1,1,1,1,1,1
+"Ürün, Ayarlayıcılar (Adjusters) ve Çarpışma Tahmincileri (Collision Estimators) tarafından kolay kullanılabilir olmalıdır. Ayarlayıcıların ve Çarpışma Tahmincilerinin %95’i ürünü kullanmayı kolay bulmalıdır.",1,1,1,1,1,1,1,1,1
+"Ürün, Çarpışma Tahmincilerinin verimliliğini artırmalıdır. Çarpışma Tahmincilerinin %80’i, ürünü kullandıktan sonraki 1 ay içinde verimliliklerinin arttığını kabul etmelidir.",1,1,1,1,1,1,1,1,1
+"Kullanıcılar, ürünü kullanırken memnuniyet hissetmelidir. Tüm kullanıcıların %85’i üründen memnun olmalıdır.",1,1,1,1,1,1,1,1,1
+"Ürün, Ayarlayıcılar ve Çarpışma Tahmincileri tarafından kolay öğrenilebilir olmalıdır. Ürün, iki günlük yerinde eğitim ile öğrenilebilmelidir.",1,1,1,1,1,1,1,1,1
+"Kullanıcı, ürünü kullanırken talimatları kolayca bulabilmelidir. Kullanıcı yardımı sistemin %90’ında bulunabilir olmalıdır.",1,1,1,1,1,1,1,0,0
+"Geri dönüştürülmüş parçalar için arama 15 saniyeden uzun sürmemelidir. Arama sonuçları 15 saniye içinde döndürülmelidir.",1,1,1,1,1,1,1,1,1
+"Tercih edilen tamir tesisi için arama 8 saniyeden uzun sürmemelidir. Tercih edilen tamir tesisi 8 saniye içinde döndürülmelidir.",1,1,1,1,1,1,1,1,1
+"Geri dönüştürülmüş parçalar denetim raporu kullanıcıya 10 saniye içinde döndürülmelidir. Denetim raporu 10 saniye içinde sunulmalıdır.",1,1,1,1,1,1,1,1,1
+"Tercih edilen tamir tesisi puanlamaları 5 saniye içinde kaydedilmelidir. Kayıt işlemi 5 saniye içinde gerçekleşmelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, kurumsal çevrimiçi kullanılabilirlik planına uymalıdır. Uygulama, planlanan kesintilerin %98’i dahilinde kapatılmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün %98 çalışma süresi sağlamalıdır. Ürün, çevrimiçi sürenin %2’sinden fazla hata vermemelidir.",1,1,1,1,1,1,1,1,1
+"Ürün aynı anda 1500 kullanıcıyı destekleyebilmelidir. Sistem 1500 kullanıcıyla birlikte çalışabilmelidir.",1,1,1,1,1,1,1,1,1
+"Geri dönüştürülmüş parçaların günlük ortalama kayıt sayısı 50.000 olmalıdır.",1,1,1,1,1,1,1,1,1
+"Ürün, ilk lansmandan sonraki 2 yıl içinde 10.000 eşzamanlı kullanıcıyı destekleyebilmelidir.",1,1,1,1,1,1,1,1,1
+"Tahminciler için ürün, kirli ve gürültülü koşullarda bir tamir tesisinde çalıştırılabilir olmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, ChoiceParts sistemiyle günde bir kez yaklaşık saat 01:00’de arayüz oluşturmalıdır.",1,1,1,1,1,1,1,1,1
+"Ürünün bakımı, belirlenmiş kurumsal bakım aralıklarında yapılacaktır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal destek merkezi aracılığıyla desteklenecektir.",1,1,1,1,1,1,1,1,0
+"Ürün kurulumları ve yükseltmeleri, belirlenmiş yayın zaman dilimleri içerisinde ara katman teknolojisi ekibi tarafından gerçekleştirilecektir.",1,1,1,1,1,1,1,0,0
+"Yalnızca ayarlayıcılar (adjusters) geri dönüştürülmüş parçalar denetim raporu talep edebilir. Ayarlayıcı rolüne sahip olmayan kullanıcılar geri dönüştürülmüş parça denetimlerini talep edemez.",1,1,1,1,1,1,1,1,1
+"Yalnızca süpervizör rolüne sahip ayarlayıcılar tercih edilen tamir tesisi puanlarını güncelleyebilir. Süpervizör rolüne sahip olmayan kullanıcılar bu puanlamalara erişemez.",1,1,1,1,1,1,1,1,1
+"Yalnızca çarpışma tahmincileri (collision estimators) geri dönüştürülmüş parçaları arayabilir. Çarpışma tahmincisi rolüne sahip olmayan kullanıcılar bu aramaya erişemez.",1,1,1,1,1,1,1,1,1
+"Sisteme yalnızca geçerli veriler girilmelidir. Geçersiz veriler sisteme girilemez.",1,1,1,1,1,1,1,0,0
+"Bir sigorta şirketi, başka bir sigorta şirketinin hasar verilerini görüntüleyemez.",1,1,1,1,1,1,1,1,1
+"Ürün bilgisayar virüslerinden arınmış olmalıdır.",1,1,1,1,0,1,1,0,0
+"Sistem, hizmet reddi (DoS) dahil kötü niyetli saldırıları önlemelidir.",1,1,1,1,0,1,1,0,0
+"Ürün Sarbanes-Oxley düzenlemelerine uymalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, geri dönüştürülmüş parça kullanımıyla ilgili tahmin yasalarına uymalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, hasar işlemleriyle ilgili sigorta düzenlemelerine uymalıdır.",1,1,1,1,1,1,1,0,0
+"Kullanıcı, tercih edilen tamir tesisini araç, araç konumu ve mil cinsinden yarıçap kullanarak aramalıdır.",1,1,1,1,1,1,1,1,1
+"Araç verileri, araç yılı, markası ve modelini içermelidir.",1,1,1,1,1,1,1,1,1
+"Araç konumu; sokak adresi, şehir, eyalet ve posta kodunu içermelidir.",1,1,1,1,1,1,1,1,1
+"Sistem, posta kodu bilinmiyorsa sokak adresi, şehir ve eyalete göre posta kodunu belirlemelidir.",1,1,1,1,1,1,1,1,1
+"Arama yarıçapı 1 ila 30 mil arasında olmalıdır.",1,1,1,1,1,1,1,1,1
+"Sistem, girilen kriterlere göre en yüksek puanlı tercih edilen tamir tesisini bulmalıdır.",1,1,1,1,1,1,1,1,1
+"Ayarlayıcı (adjuster), tahmin atamasına tercih edilen tamir tesisini girmelidir.",1,1,1,1,1,1,1,1,1
+"Ayarlayıcı, tahmin atamasında tercih edilen tamir tesisini geçersiz kılabilmelidir.",1,1,1,1,1,1,1,1,1
+"Tercih edilen tamir tesisi kullanıcıya döndürülmelidir.",1,1,1,1,1,1,1,1,1
+"Tercih edilen tamir tesisi belirlenemiyorsa sistem, yarıçap içindeki tamir tesislerinin bir listesini döndürmelidir.",1,1,1,1,1,1,1,1,1
+"Tahminci (estimator), hasarlı araç parça bilgilerini kullanarak mevcut geri dönüştürülmüş parçaları aramalıdır.",1,1,1,1,1,1,1,1,1
+"Tahminci, tercih edilen parça tedarikçileri listesini kullanarak mevcut geri dönüştürülmüş parçaları aramalıdır.",1,1,1,1,1,1,1,1,1
+"Sistem, sağlanan araç parçaları ve tedarikçiler için mevcut geri dönüştürülmüş parçaları aramalıdır.",1,1,1,1,1,1,1,1,1
+"Tercih edilen parça tedarikçileri için parça bulunamazsa tahminci, posta kodu ve 30 millik yarıçap ile arama yapmalıdır.",1,1,1,1,1,1,1,1,1
+"Sistem, aramadan döndürülen mevcut geri dönüştürülmüş parçaları ve tedarikçileri saklamalıdır.",1,1,1,1,1,1,1,1,1
+"Mevcut geri dönüştürülmüş parçaların bilgileri ve bunların tedarikçileri kullanıcıya döndürülmelidir.",1,1,1,1,1,1,1,1,1
+"Tahminci, seçilen geri dönüştürülmüş parçaları çarpışma tahminine uygulamalıdır.",1,1,1,1,1,1,1,1,1
+"Hiçbir mevcut parça döndürülmezse tahminci geri dönüştürülmüş parçaları çarpışma tahminine uygulamamalıdır.",1,1,1,1,1,1,1,1,1
+"Ayarlayıcı, çarpışma tahminini gözden geçirmelidir.",1,1,1,1,1,1,1,1,1
+"Ayarlayıcı, çarpışma tahmininin geri dönüştürülmüş parça denetimini talep etmelidir.",1,1,1,1,1,1,1,1,1
+"Tahminciye sağlanan geri dönüştürülmüş parça arama sonuçları sistem tarafından alınmalıdır.",1,1,1,1,1,1,1,0,1
+"Sistem, mevcut geri dönüştürülmüş parçalar ve çarpışma tahmini baz alınarak bir denetim raporu oluşturmalıdır.",1,1,1,1,1,1,1,1,1
+"Denetim raporu, tahminde kullanılan geri dönüştürülmüş parça toplamını içermelidir.",1,1,1,1,1,1,1,1,1
+"Denetim raporu, orijinal arama sonuçlarından dönen mevcut geri dönüştürülmüş parça sayısını içermelidir.",1,1,1,1,1,1,1,1,1
+"Denetim raporu, tahminde kullanılan mevcut geri dönüştürülmüş parçaların yüzdesini içermelidir.",1,1,1,1,1,1,1,0,1
+"Denetim raporu, bireysel satır öğelerinin toplamından oluşan denetimin toplam puanını içermelidir.",1,1,1,1,1,1,1,0,0
+"Denetim raporu kullanıcıya görüntülenmelidir.",1,1,1,1,1,1,1,1,1
+"Denetim raporu daha sonraki zamanlarda diğer ayarlayıcıların erişimine açık olmalıdır.",1,1,1,1,1,1,1,0,0
+"Kullanıcı, tercih edilen tamir tesisi puanlarını görüntülemeyi seçmelidir.",1,1,1,1,1,1,1,1,1
+"Güncel tamir tesisi puanları kullanıcıya gösterilmelidir.",1,1,1,1,1,1,1,1,1
+"Sistemde henüz puan tanımlanmamışsa sistem boş bir puan seti gösterecektir.",1,1,1,1,1,1,1,1,1
+"Kullanıcı, denetim raporuna dayanarak yeni puanlar girmelidir.",1,1,1,1,1,1,1,1,1
+"Puanlamalar 1-10 ölçeğinde olmalıdır.",1,1,1,1,1,1,1,1,1
+"Puanlamalar, geri dönüştürülmüş parçaların denenmiş kullanımı ve fiili kullanımı için kategorileri içermelidir.",1,1,1,1,1,1,1,0,1
+"Kullanıcı, tercih edilen tamir tesisi puanlarını kaydetmeyi seçmelidir.",1,1,1,1,1,1,1,1,1
+"Tercih edilen tamir tesisi puanları sistem tarafından kaydedilmelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, piyasadaki çoğu veritabanı yönetim sistemi (DBMS) ile çalışabilmelidir; DBMS ürünle aynı makinede olabileceği gibi aynı bilgisayar ağındaki farklı bir makinede de yer alabilir.",1,0,1,1,1,1,1,0,0
+"Ürün, Java çalışma zamanı kurulabilen herhangi bir işletim sisteminde sunucu yazılımlarıyla birlikte çalışacaktır.",1,1,1,1,1,1,1,0,1
+"Ürün, bir veritabanı yönetim sistemi (DBMS) ile birlikte çalışmayı gerektirecektir. DBMS, ürünle aynı makinede ya da aynı bilgisayar ağında ayrı bir makinede bulunabilir.",1,1,1,1,1,1,1,1,1
+"Ürün, web/uygulama sunucusu teknolojisini kullanmalıdır. Açık kaynak örnekleri: Apache, Tomcat ve JBoss.",1,1,1,1,1,1,1,1,1
+"Oracle, DB2, MySQL veya HSQL gibi bir veritabanı yönetim sistemi ürünle entegre edilmelidir.",1,1,1,1,1,1,1,1,1
+"Ürünün görünüm ve hissi (look and feel), müşterinin organizasyonuna ait logo, marka ve kimlik gibi unsurları içerebilecek şekilde yapılandırılabilmelidir.",1,0,1,1,1,1,1,0,0
+"Ürünün görünümü muhafazakâr ve profesyonel olmalıdır.",1,0,1,1,1,1,1,0,0
+"Ürün, kullanıcıların kullanmak istemesini sağlamalıdır. Anket edilen kullanıcıların %80’i, lansmandan sonraki ilk 2 haftadan sonra ürünü düzenli olarak kullandıklarını bildirmelidir.",1,1,1,1,1,1,1,1,1
+"Ürün kolay kullanılmalıdır. Kullanıcıların %90’ı ürünü kullanmaya başladıktan sonraki 5 dakika içinde başarılı biçimde toplantı odası ayırtabilmelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, gerekli olduğunda kullanıcılara geri bildirim vermelidir. Anket edilen kullanıcıların %80’i ürünün eylemlerini doğru şekilde onayladığını bildirmelidir.",1,1,1,1,1,1,1,0,1
+"Ürün, kullanıcıya hedef pazar ülkelerinden birinin dilini seçme olanağı sunmalıdır.",1,0,1,1,1,1,1,0,0
+"Ürün, başlangıç sayfası ve görünüm tercihlerinin özelleştirilmesine izin vermelidir.",1,1,1,1,1,1,1,1,1
+"Bir çalışan ürünü birkaç dakika içinde başarılı biçimde kullanabilir olacaktır. Üründe 15 dakikadan daha kısa bir süre içinde gayri resmi gezinme sonrası kullanıcılar toplantı kurma ve toplantı odası ayırtmayı başarıyla gerçekleştirebilmelidir.",1,1,1,1,1,1,0,0,1
+"Ürün, çoğu web kullanıcısına tanıdık gelen standart bir gezinme menüsü kullanmalıdır.",1,0,1,1,1,1,1,0,0
+"Ürün, mevcut toplantı odalarının sezgisel (intuitive) şekilde aranmasına imkan vermelidir.",1,1,1,1,1,1,1,0,0
+"Ürün, Amerika Engelliler Yasası (Americans with Disabilities Act - ADA) ile uyumlu olmalıdır.",1,1,1,1,1,1,1,0,0
+"Yanıtlar kullanıcının düşünce akışını kesmeyecek kadar hızlı olmalıdır. Görevlerin %90’ı 5 saniye içinde, %98’i ise 8 saniye içinde tamamlanmalıdır.",1,1,1,1,1,1,1,1,1
+"Sunucu arızaları dışında yazılım ürünü %99.99 çalışma süresi (uptime) sağlamalıdır.",1,1,1,1,1,1,1,0,1
+"Ürün, karşılaşılan sorunların bir istisna kaydını oluşturacak ve analiz ve çözüm için şirketimize iletecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, aynı anda 1.000 isteği işleyebilecek kapasitede olmalıdır. Bu sayı, Sürüm 2’de 2.000’e çıkarılacaktır. Eşzamanlılık kapasitesi, sabah erken ve öğleden sonra geç saatler gibi yoğun zamanları karşılayabilmelidir.",1,1,1,1,1,1,0,0,1
+"Ürün, piyasaya sürülmesinden iki yıl içinde saatte 10.000 işlemi gerçekleştirebilecektir. Bu sayı Sürüm 2’de 20.000’e çıkarılacaktır.",1,1,1,1,1,1,0,0,1
+"Ürün, her müşteri kurulumunda en az 5 yıl çalışacak şekilde tasarlanmalıdır.",1,1,1,1,1,1,1,1,1
+"Ürün, ofis ortamlarında kullanılacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, herhangi bir HTML tarayıcısıyla etkileşim kurabilmelidir. Ürün, kullanıcı ile ürün arasında verileri sorunsuz iletecek ve test edilen tüm HTML tarayıcıların %80’inde HTML’i doğru şekilde gösterecektir (minimum 8 tarayıcı test edilecektir).",1,1,1,1,1,1,0,0,1
+"Ürün, çeşitli veri tabanı yönetim sistemleriyle etkileşim kurabilmelidir. Ürün, tüm işlemlerin %100’ünde veri tabanı yönetim sistemiyle başarılı şekilde iletişim kuracaktır.",1,1,1,1,1,1,1,0,1
+"Ürün, karşılaşılan sorunları içeren bir istisna kaydı oluşturacak ve analiz ve çözüm için şirketimize iletilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, aynı anda 1.000 isteği işleyebilecektir. Bu sayı, Sürüm 2’de 2.000’e yükselecektir. Ürün, yoğun zamanlarda (sabah erken ve öğleden sonra geç saatler) bu kapasiteyi karşılayabilmelidir.",1,1,1,1,1,1,1,0,1
+"Ürün, piyasaya sürülmesinden iki yıl içinde saatte 10.000 işlemi gerçekleştirebilecektir. Bu sayı, Sürüm 2’de 20.000’e yükselecektir.",1,1,1,1,1,1,1,0,1
+"Ürün, yalnızca şirket çalışanlarının veya şirket tarafından onaylanmış kullanıcı kimliklerine sahip dış kullanıcıların ürün erişimine sahip olmasını sağlayacaktır. Tüm girişlerin %100'ü yalnızca şirket çalışanları veya onaylı kullanıcı kimlikleri ile gerçekleşecektir.",1,1,1,1,1,1,1,1,1
+"Sadece yöneticiler kullanıcıya göre rezervasyon sorgusu yapabilir. Tüm rezervasyon sorgularının %100'ü yalnızca yönetici girişlerinden yapılacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, veritabanındaki verilerin kullanıcı tarafından girilen bilgilerle eşleşmesini sağlayacaktır. Sistem üzerindeki her konferans odası rezervasyonu, kullanıcı tarafından girilen aynı bilgileri içerecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, kötü amaçlı veri girişini engelleyecektir. Ürün ve/veya bağlantılı donanım/yazılım sistemlerinin verileri, her kötü amaçlı veri girişi sırasında %100 bozulmadan kalacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün ve/veya bağlı veritabanları/dosyalar, kötü amaçlı veri girişine rağmen çalışmaya devam edecektir. Kötü amaçlı veri girişleri sırasında ürün ve/veya bağlı veritabanları/dosyalar %100 çökmeden çalışacaktır.",1,1,1,1,1,1,1,1,1
+"Ürünün dili, hedef pazarlardaki tüm ülkeleri kapsayacaktır. Her hedef pazar ülkesinden katılımcıların %90'ı, ürünün dilinin kabul edilebilir olduğunu belirleyecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, J2SE/J2EE programlama dili kütüphaneleri ile geliştirilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, toplantı kayıtlarını tutacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, çalışanlara toplantı davetlerini bildirecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, çalışanlara toplantı hatırlatmaları gönderebilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, her toplantıyı oluşturan organizatörün iletişim bilgilerini toplantıya atayacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, toplantı onaylarını kaydedecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, yeni konferans odalarını depolayabilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, mevcut konferans odalarını güncelleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, konferans odalarını silebilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, yeni oda ekipmanlarını depolayabilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, mevcut oda ekipmanlarını güncelleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Son 30 gün için Envanter Miktarı Düzeltme işleminin tamamlanması 30 dakikadan fazla sürmeyecektir.",1,1,1,1,1,1,1,1,1
+"Sistem aynı anda en az 6 kullanıcının çalışmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"Sistem mevcut bilgisayar ekipmanlarını kullanacaktır.",1,1,1,1,1,1,1,1,0
+"Sistem iş verilerini otomatik olarak yedekleyip talep üzerine geri yükleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Sistem tutarlı güvenliği sağlayacaktır. Kullanıcı şifreleri ve/veya izinlerde yapılan değişiklikler sistemin tüm bölümlerinde geçerli olacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, tüm ana alt sistemler için erişim haklarını detaylı şekilde kontrol edebilecektir. Tüm alt sistemler için erişim hakları bağımsız olarak atanabilir olmalıdır.",1,1,1,1,1,1,1,1,1
+"Sistem, tüm geçerli muhasebe standartlarına uyacaktır. Sistem nihai sürümü, bağımsız bir denetçi tarafından yapılan denetimi başarıyla geçmelidir.",1,1,1,1,1,1,1,1,1
+"Sistem, telif ücreti gerektiren ek üçüncü taraf lisanslarına ihtiyaç duymayacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, Envanter Miktarı Düzeltme belgelerinin talep üzerine oluşturulmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"Sistem, belirli bir zamandan itibaren tüm Envanter Miktarı Düzeltme belgelerinin talep üzerine oluşturulmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"IQA alt sistemi mevcut envanter durumunu dikkate alacak ve ikame edilebilir malzemelerin envanterini buna göre ayarlayacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, ürün formüllerinin girilmesine, depolanmasına ve değiştirilmesine izin verecektir.",1,1,1,1,1,1,1,1,1
+"Ürün formülleri, kendi formüllerine sahip yarı ürünlerin kullanılmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"Ürün formülü bileşenleri, ikame edilebilir malzemelerin tanımlanmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"Formül ikame edilebilir bileşenler, kalıcı sırayla saklanacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, POS terminalleri tarafından kullanılan ürün menülerinin girilmesine, depolanmasına ve değiştirilmesine izin verecektir.",1,1,1,1,1,1,0,0,1
+"PME alt sistemi, muhasebe sisteminde saklanan ürün listesine dayalı olarak ürün menüleri oluşturulmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"PME alt sistemi, menüler içinde alt menülerin ve alt menüler içinde ürünlerin yönetilen ve kalıcı sırayla saklanmasına izin verecektir.",1,1,1,1,1,1,0,0,1
+"Formül ikame edilebilir bileşenler, PFE alt sistemi tarafından otomatik olarak girilecektir.",1,1,1,1,1,1,1,1,1
+"Formül ikame edilebilir bileşenler, kalıcı sırayla saklanacaktır.",1,1,1,1,1,1,1,1,1
+"Ürün, POS terminalleri tarafından kullanılan ürün menülerinin girilmesine, depolanmasına ve değiştirilmesine izin verecektir.",1,1,1,1,1,1,0,0,1
+"PME alt sistemi, muhasebe sisteminde saklanan ürün listesine dayalı olarak ürün menüleri oluşturulmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"PME alt sistemi, menüler içinde alt menülerin ve alt menüler içinde ürünlerin yönetilen ve kalıcı sırayla saklanmasına izin verecektir.",1,1,1,1,1,1,0,0,1
+"PME alt sistemi, bir ürünün birden fazla alt menüde bulunmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"RMS sistemi, Windows XP görünüme sahip olacak ve GUI özelliklerini kullanarak kullanımını sezgisel hale getirecektir.",1,1,1,1,1,1,1,1,1
+"Sistem, ürün günlük satış verilerine ve ürün formüllerine dayanarak Envanter Miktarı Ayarlama belgesi oluşturacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, ürün günlük satış verileri ve ürün formüllerine dayalı olarak Envanter Miktarı Düzeltme belgeleri üretecektir.",1,1,1,1,1,1,1,1,1
+"Sistem, günlük Ürün Satış verileri mevcut olduğunda Envanter Miktarı Düzeltme belgelerini otomatik olarak oluşturacaktır.",1,1,1,1,1,1,1,1,1
+"Yönetici, Yönetim bölümünden ön ödemeli kartı 5 saniye içinde aktive edebilecektir.",1,1,1,1,1,1,1,1,1
+"Müşteri, ön ödemeli kartlarının durumunu PIN numarası girerek 5 saniye içinde kontrol edebilecektir.",1,1,1,1,1,1,1,1,1
+"Sistem, müşterilerin web sitesinde 'kullandıkça öde' kullanıcı olarak 5 dakika içinde kayıt olmalarını sağlayacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, müşterilerin web sitesinde 'sınırsız film abonesi' kullanıcı olarak 10 dakika içinde kayıt olmalarını sağlayacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, mevcut müşterilerin e-posta adresi ve şifre ile web sitesine 5 saniye içinde giriş yapmasına izin verecektir.",1,1,1,1,1,1,1,1,1
+"Sistem, müşterilerin hesaplarını iptal etmelerine izin verecek, işlem 2 dakikadan uzun sürmeyecek, veritabanı hesabı pasif olarak işaretleyecek ve kullanıcı web sitesine giriş yapamayacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, yöneticinin müşteri hesabını 1 dakika içinde devre dışı bırakmasına izin verecek, müşteri artık web sitesine erişemeyecektir.",1,1,1,1,1,1,1,1,1
+"Yönetici, web sitesinde filmleri 5 dakika içinde ekleyip/silebilecektir. Girilen film bilgileri veritabanında saklanacak ve siteye yansıyacaktır.",1,1,1,1,1,1,1,1,1
+"Yönetici, web sitesinde kategorileri 5 dakika içinde ekleyip/silebilecektir.",1,1,1,1,1,1,1,1,1
+"Izogn yöneticisi, satış ve kullanım istatistiklerine 2 dakika içinde erişebilecektir.",1,1,1,1,1,1,1,1,1
+"Yönetici, benzersiz ön ödemeli PINler oluşturabilecek ve Excel dosyasıyla kaydedebilecektir.",1,1,1,1,1,1,1,1,1
+"Web sitesi tüm kitleler için çekici görünmelidir; eğlenceli ve renkler parlak olmalıdır.",1,1,1,1,1,1,0,0,0
+"Web sitesi modern, temiz ve sade bir tasarıma sahip olmalıdır.",1,1,1,1,1,1,0,0,0
+"Ürün, Internet üzerinde acemi kullanıcıların %90'ı tarafından kullanılabilir olmalıdır.",1,1,1,1,1,1,1,1,1
+"Kullanıcılar, web sitesinde hesap oluşturmak için en fazla 4 sayfa gezinmek zorunda olmalıdır.",1,1,1,1,1,1,1,1,1
+"Kullanıcılar, web sitesine giriş yaptıktan sonra filmlerine 2 tıklamada erişebilmelidir.",1,1,1,1,1,1,1,1,1
+"Gizli anketler, kullanıcıların %70'inin 2 hafta içinde akışlı film satın almayı rahat bulduğunu göstermelidir.",1,1,1,1,1,1,0,0,0
+"Gizli anketler, kullanıcıların %95'inin bir ay sonra ön ödemeli kartları kullanmayı ve satın almayı rahat bulduğunu göstermelidir.",1,1,1,1,1,1,0,0,0
+"Ürün, müşteri satın alma tercihlerini ve bilgilerini saklamalıdır.",1,1,1,1,1,1,1,1,1
+"Ürün, acemi kullanıcıların internet üzerinden film satın almasını ve izlemesini kolaylaştırmalıdır; belirlenmiş bir filmi 3 dakikada izleyebilmelidir.",1,1,1,1,1,1,1,1,1
+"Streaming sunucusu maksimum 700 filmi destekleyecektir; daha fazla film için yeni sunucular eklenebilir.", 1,1,1,1,1,1,1,1,1
+"Sunucu maksimum 1.000 eşzamanlı kullanıcıyı destekleyecektir.", 1,1,1,1,1,1,1,1,1
+"Web sitesi 100.000 müşteriyi destekleyebilecek kapasitede olmalıdır.", 1,1,1,1,1,1,1,1,1
+"Ürünün en fazla bakım bütçesi içinde en az 2 yıl çalışması beklenmelidir.", 1,1,1,1,1,1,1,0,0
+"Web sitesinin tüm özelliklerine bir web tarayıcısı üzerinden İnternet üzerinden erişilebilmelidir.", 1,1,1,1,1,1,1,1,1
+"Mevcut web sitesini destekleyen aynı donanım yeni sistemi desteklemek için kullanılacaktır.", 1,1,1,1,1,1,1,1,1
+"Aşağıdaki tarayıcılarla arayüz kurulabilmelidir: IE 5.X, 6.0, Netscape 6.x, 7.x, 8.x ve Firefox 1.0.", 1,1,1,1,1,1,1,1,1
+"Web sitesi, kredi kartı işlemlerini işlemek için CyberSource API ile arayüz kurmalıdır.", 1,1,1,1,1,1,1,1,1
+"Web sitesi MSN TV2 ile tam olarak çalışır durumda olmalıdır.", 1,0,1,1,1,1,1,0,0
+"Filmler Windows Media Player 9.0 üzerinden kodlanmalı ve akış (stream) yapılmalıdır.", 1,1,1,1,1,1,1,1,1
+"Filmler 56k ve 256k hızındaki akışlar için kodlanmalıdır.", 1,1,1,1,1,1,1,1,1
+"Web sitesine yapılacak promosyon güncellemeleri bir gün içinde tamamlanmalıdır.", 1,1,1,1,1,1,1,1,1
+"Izogn yöneticisi, web sitesindeki kategori listelerini 2 dakika içinde güncelleyebilmelidir.", 1,1,1,1,1,1,1,1,1
+"Izogn yöneticisi, web sitesine yeni ürünleri 2 dakika içinde ekleyebilmelidir.", 1,1,1,1,1,1,1,1,1
+"Sistem, müşterilere destek sağlamak için 24 saat hizmet veren 800 numaralı ücretsiz bir hattı sunacaktır.", 1,1,1,1,1,1,1,1,1
+"Web sitesi, yaygın sorunlara yanıt ve çözümler içeren bir yardım bölümü sunacaktır.", 1,1,1,1,1,1,1,1,1
+"Velkat personeli, Pazartesi-Cuma 07:00–19:00 saatleri arasında Izogn yöneticilerine teknik destek sağlamak için telefon desteği sunacaktır.", 1,1,1,1,1,1,1,1,1
+"Ürün, belirtilen ortamda 1 iş günü içinde kurulabilmelidir.", 1,1,1,1,1,1,1,1,1
+"Sadece kayıtlı müşteriler streaming filmleri satın alabilir.", 1,1,1,1,1,1,1,1,1
+"Bir müşteri yalnızca filmi satın aldıysa ve 2 günlük izleme süresi içindeyse streaming yapabili.", 1,1,1,1,1,1,1,1,1
+"Sadece yetkili personel müşteri kayıtlarına erişebilir.", 1,1,1,1,1,1,1,1,1
+"Sadece yöneticiler ön ödemeli kartı aktifleştirebilir.", 1,1,1,1,1,1,1,1,1
+"Sadece yetkili personel satış bilgilerine erişebilir.", 1,1,1,1,1,1,1,1,1
+"Web sitesi, yanlış veri girildiğinde verilerini bozulmaktan koruyacaktır.", 1,1,1,1,1,1,1,1,1
+"Web sitesi, kasıtlı kötüye kullanımı engelleyecek ve tüm olaylarda yöneticiyi bilgilendirecektir.", 1,1,1,1,1,1,1,1,1
+"Veri bütünlüğü betikleri haftalık olarak çalıştırılacak ve veritabanının bütünlüğü doğrulanacaktır.", 1,1,1,1,1,1,1,1,1
+"Web sitesi, kullanıcıdan veri toplarken bilgileri nasıl kullanacağını tüm sayfalarda erişilebilir Gizlilik Politikası ile bildirecektir.", 1,1,1,1,1,1,1,1,1
+"Sistem, kullanıcıları bilgi politikasındaki değişiklikler hakkında bilgilendirecektir.", 1,1,1,1,1,1,1,1,1
+"Sistem, özel bilgileri yalnızca organizasyonun bilgi politikasına uygun olarak açıklayacaktır.", 1,1,1,1,1,1,1,1,1
+"Tüm müşteri bilgileri yalnızca yetkili personelin erişebileceği güvenli bir veritabanında saklanacaktır.", 1,1,1,1,1,1,1,1,1
+"Tüm kredi kartı bilgileri veritabanında şifrelenmiş olarak saklanacaktır.", 1,1,1,1,1,1,1,1,1
+"Streaming sunucusunda kötü amaçlı virüsleri önlemek için anti-virüs yazılımı bulunacaktır", 1,1,1,1,1,1,1,1,1
+"Web sitesi, Nijerya’daki tüm kabilelere hitap etmelidir", 1,1,1,0,1,1,1,0,0
+"Web sitesi dini veya etnik gruplara karşı saldırgan olmamalıdır", 1,1,1,1,1,1,1,1,1
+"Web sitesi yalnızca Nijeryalılar değil, tüm Afrikalılara hitap etmelidir", 1,1,1,0,1,1,1,0,0
+"Web sitesi, ana sayfada animasyon sağlamak için Flash kullanmalıdır", 1,1,1,1,1,1,1,1,1
+"IzognMovies, Afrika filmlerini yayınlamak için ilgili kuruluşlar tarafından belirlenen lisanslama gerekliliklerini karşılamalıdır", 1,1,1,1,1,1,1,1,1
+"Web sitesi W3C standartlarına uygun olacaktır", 1,1,1,1,1,1,1,1,1
+"PHP kodu PEAR standartlarına uygun olacaktır", 1,1,1,1,1,1,1,1,1
+"Web sitesi müşterilerin filmleri başlık, oyuncu veya yönetmen bilgisine göre aramasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Film detaylarını görüntülerken web sitesi, yöneticinin girdiği filmin açıklamasını, oyuncularını ve yönetmenini gösterecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, bir kullanıcıya film akışı izleme izni vermeden önce kredi kartı ödemesini talep edecek ve yetkilendirecektir", 1,1,1,1,1,1,1,1,1
+"Satın alınan film, satın alma tarihinden itibaren 2 gün boyunca Windows Media Player üzerinden izlenebilecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, müşterilerin filmleri izogn yöneticisi tarafından girilen kategorilere göre gezmesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, müşterilerin seçilen filmlere diğer müşteriler tarafından yapılan yorumları görüntülemesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, müşterilerin seçilen film için kendi yorumlarını eklemesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, izogn yöneticisinin müşteriler tarafından gönderilen bir yorumu onaylamasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Sistem, müşterilerin bir film için ön ödemeli kartla ödeme yapmasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, müşterilerin $5, $10 veya $20 değerinde ön ödemeli kartları kredi kartı veya posta ile ödeme seçeneğiyle satın almasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Sistem, web sitesinin ana sayfasını her Cuma otomatik olarak güncelleyecek ve eklenen 4 en son filmi gösterecektir", 1,1,1,1,1,1,1,1,1
+"Sistem, kullanıcıların web sitesindeki “Hesabım” bölümü üzerinden fatura ve iletişim bilgilerini güncellemesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Ön ödemeli kartlar e-posta veya basılı kart yoluyla dağıtılacaktır", 1,1,1,1,1,1,1,1,1
+"Sadece kayıtlı müşteriler streaming filmleri satın alabilir", 1,1,1,1,1,1,1,1,1
+"Müşteri bir filmi satın aldıysa ve 2 günlük izleme süresi içindeyse, film akışı yapılabilir", 1,1,1,1,1,1,1,1,1
+"Web sitesi, Izogn Yöneticisi tarafından belirlenen çeşitli parametrelerle ücretsiz deneme sürelerini destekleyebilmelidir", 1,1,1,1,1,1,1,1,1
+"Tüm streaming film satışları veritabanında kaydedilecek ve yönetici tarafından erişilebilir olacaktır", 1,1,1,1,1,1,1,1,1
+"Tüm kayıtlı müşteri bilgileri, müşteri hesabını iptal etse bile veritabanında saklanacak ve korunacaktır", 1,1,1,1,1,1,1,1,1
+"Günlük kullanım istatistikleri kaydedilecek ve yönetici tarafından erişilebilir olacaktır", 1,1,1,1,1,1,1,1,1
+"Sahip, tüm streaming filmlere ücretsiz erişime sahip olacaktır", 1,1,1,1,1,1,1,0,1
+"Toplam lead döngü süresi, iş saatlerinde (%90 lead hacmi için 8AM-8PM CST) 5 dakika, iş dışı saatlerde (%99 lead hacmi için) 3 dakika içinde tamamlanmalıdır", 1,1,1,1,1,1,1,0,1
+"Hiçbir lead değerlendirmesi, işlenen tüm leadlerin %97’si için 25 saniyeden uzun sürmeyecektir", 1,1,1,1,1,1,1,0,1
+"25 saniyeden uzun süren leadler için sistem olayı ve süreyi kaydedecektir", 1,1,1,1,1,1,1,1,1
+"Süreç, bir leadin toplam yaşam döngüsünde 3 dakika içinde atanacağı Auto Rep Assignment işleminde belirtilen işlem süresi koşullarına uymalıdır", 1,1,1,1,1,1,1,0,1
+"Lead yıkama süreci, belirlenen fiziksel web servis yapısı içinde çalışacaktır", 1,1,1,1,1,1,1,1,1
+"Yıkama süreci, lead verilerini alırken ve işlerken bağlayıcı olmayan nötr bir veri formatı (ör. XML) kullanmalıdır", 1,1,1,1,1,1,1,1,1
+"Hata raporları, teknik birimler için 7/24 erişilebilir olacaktır", 1,1,1,1,1,1,1,0,1
+"Yıkama parametreleri, planlı bakım saatlerinde güncellenecektir", 1,1,1,1,1,1,1,1,1
+"Satıcı geçersiz leadi doğrulayacaktır", 1,1,1,1,1,1,1,1,1
+"Satıcı, kurumsal faturalama sistemine uygulanacak bir kredi doğrulama kaydı gönderecektir", 1,1,1,1,1,1,1,1,1
+"Bir lead yüksek skora sahipse, sistem lead verilerini ve skorunu kurumsal sisteme sağlayacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, web servisi tarafından alınan tüm leadleri geçerli veri açısından doğrulayacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, web servisi tarafından yakalanan tüm leadleri sisteme ekleyecektir", 1,1,1,1,1,1,1,1,1
+"Lead skoru yüksek ortalama aralığında ise, ARA işlevi tarafından işlenecektir", 1,1,1,1,1,1,1,0,1
+"Lead skoru orta ortalama aralığında ise, eleads sistemi üzerinden bir Kayıt Koordinatörü tarafından manuel doğrulama için ayarlanacaktır", 1,1,1,1,1,1,1,0,1
+"Lead skoru düşük ortalama aralığında ise, sağlayan satıcıya iade edilecektir", 1,1,1,1,1,1,1,0,1
+"Lead yıkama işlevi, hem iletişim hem akademik skor bilgilerini toplam skor için derleyecektir", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, leadin bir kısmını puanlamak için kurumsal ve okul tarafından sağlanan parametreleri kullanacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, sağlayıcıya iade edilen lead verilerini ve reddedilme nedenini döndürecektir", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, lead veri parametrelerinin yönetilebileceği bir arayüze sahip olacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, kullanıcıların parametre güncellemeleri yapma yetkilerini ve kimlik doğrulamasını doğrulayacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, kurumsal sistemden döndürülen potansiyel lead tekrarlarını saklayacaktır", 1,1,1,1,1,1,1,1,1
+"Lead kurumsal sisteme gönderilmeden önce, lead bir kabul temsilcisine atanacaktır", 1,1,1,1,1,1,1,1,1
+"Lead yıkama işlevi, kurumsal sistemden mevcut temsilcilerin periyodik listesini alacaktır", 1,1,1,1,1,1,1,0,1
+"Ürün, denizde gemilerin görünümünü simüle edecektir", 1,1,0,1,1,1,1,0,0
+"Ürün, periskop görünümü ile bir daire içinde ızgaraları gösterecektir", 1,1,0,1,1,1,1,0,0
+"Ürün, her gemi türünü, o gemi türünün resmi ile ızgarada gösterecektir", 1,1,0,1,1,1,1,0,0
+"Saldırgan oyuncu ateş ettiğinde, ürün denizde gemi sesini simüle edecektir", 1,1,0,1,1,1,1,0,0
+"Ateş kaçırıldığında, ürün hedefi ıskalama sesini simüle edecektir", 1,1,0,1,1,1,1,0,0
+"Ateş isabet ettiğinde, ürün hedefe çarpma sesini simüle edecektir", 1,1,0,1,1,1,1,0,0
+"Bir gemi battığında, ürün batma sesini simüle edecektir", 1,1,0,1,1,1,1,0,0
+"Ürün, günde 24 saat, haftada 7 gün erişilebilir olacaktır", 1,1,1,1,1,1,1,1,1
+"Ürün, eşzamanlı olarak çok sayıda oyunu destekleyebilecektir", 1,1,1,1,1,1,1,1,1
+"Yanıt süresi, oyunun akışını koruyacak kadar hızlı olmalıdır; yanıt süresi %95 için 2 saniyeyi, kalan %5 için 4 saniyeyi geçmeyecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, oyuncuların kimliğini koruyacaktır; oyuncular başka bir oyuncunun kimliğini açığa çıkaracak bilgiye erişemeyecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, sezgisel ve kendini açıklayan olmalıdır; 10 kullanıcıdan 9’u herhangi bir eğitim olmadan oyunu tamamlayabilmelidir", 1,1,1,1,1,1,1,1,1
+"Ürün, İngilizce, İspanyolca ve Fransızca bilen oyuncular için erişilebilir olmalıdır; kullanıcı ürüne erişirken dili seçebilmelidir", 1,1,1,1,1,1,1,1,1
+"Ürün, oyuncuların başka bir oyuncunun kimliğini açığa çıkaracak bilgiye erişmesini engelleyecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, oyuncu listesini tutacaktır", 1,1,1,1,1,1,1,1,1
+"Ürün, kullanıcının kendini oyuncu olarak tanımlamasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Bir oyun başlatıldığında, ürün oyuna atanan oyuncuları oyuncu listesinden seçilemez hâle getirecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, kullanıcının istediği zaman kendini oyuncu listesinden çıkarmasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, aktif olmayan oyuncuları oyuncu listesinden seçilemez hâle getirecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, 24 saat boyunca aktif olmayan oyuncuları oyuncu listesinden kaldıracaktır", 1,1,1,1,1,1,1,1,1
+"Ürün, bir oyuncunun, listeden başka bir mevcut oyuncuyu seçerek oyunu başlatmasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Oyun başlatıldığında, ürün her oyuncuya bir savunma ızgarası gösterecektir", 1,1,0,1,1,1,1,0,0
+"Ürün, bir oyuncunun diğer oyuncunun saldırı veya savunma ızgaralarını görmesini engelleyecektir", 1,1,1,1,1,1,1,1,1
+"Oyun başlatıldığında, ürün her oyuncunun 5 gemisini kendi savunma ızgarasına yerleştirmesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, bir oyuncunun gemilerini ızgarada yatay olarak yerleştirmesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, bir oyuncunun gemilerini ızgarada dikey olarak yerleştirmesine izin verecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, bir oyuncunun gemilerini ızgarada çapraz olarak yerleştirmesine izin verecektir", 1,1,1,0,1,1,1,0,0
+"Ürün, bir oyuncunun ızgarasında gemilerin üst üste gelmesini engelleyecektir", 1,1,1,1,1,1,1,1,1
+"Her iki oyuncu da 5 gemisini savunma ızgarasına yerleştirdiğinde, ürün her oyuncunun ilk tur durumunu belirleyecektir", 1,1,1,1,1,1,1,1,1
+"Her turda, ürün bir oyuncuyu saldırı durumunda, bir oyuncuyu savunma durumunda olarak belirleyecektir", 1,1,1,1,1,1,1,1,1
+"Ürün, her oyuncunun tur boyunca durumunu (saldırı veya savunma) koruyacaktır", 1,1,1,1,1,1,1,1,1
+"Her turun başında, ürün her oyuncuya durumunu bildirecektir", 1,1,1,1,1,1,1,1,1
+"Her tur için, ürün saldırı oyuncusunun bir atış tanımlamasına izin verecektir", 1,1,1,1,1,1,1,1,1
+"Her atış için, ürün savunma oyuncusunun ızgarasını inceleyerek atışın isabet veya kaçırma olduğunu belirleyecektir", 1,1,1,1,1,1,1,1,1
+"Her atış için, ürün oyunculara atışın isabet veya kaçırma olduğunu bildirecektir", 1,1,1,1,1,1,1,1,1
+"Her atış için, ürün savunma oyuncusunun ızgarasında atışı isabet veya kaçırma olarak işaretleyecektir", 1,1,1,1,1,1,1,1,1
+"Her atış için, ürün saldırı oyuncusunun ızgarasında atışı isabet veya kaçırma olarak işaretleyecektir", 1,1,1,1,1,1,1,1,1
+"Atış bir gemiyi batırırsa, ürün oyunculara geminin battığını bildirecektir", 1,1,1,1,1,1,1,1,1
+"Atış bir gemiyi batırırsa, ürün savunma oyuncusunun ızgarasında gemiyi batık olarak işaretleyecektir", 1,1,1,1,1,1,1,1,1
+"Atış bir gemiyi batırırsa, ürün savunma oyuncusunun ızgarasında batırılan geminin türünü gösterecektir",1,1,0,1,1,1,1,0,0
+"Atış bir gemiyi batırırsa, ürün saldırı oyuncusunun ızgarasında gemiyi batık olarak işaretleyecektir",1,1,1,1,1,1,1,1,1
+"Atış isabet olarak işaretlendiyse, ürün saldırı oyuncusunun bir sonraki atışı tanımlamasına izin verecektir",1,1,1,1,1,1,1,1,1
+"Atış kaçırılmışsa, ürün saldırı oyuncusunun durumunu savunma olarak değiştirecektir",1,1,1,1,1,1,1,1,1
+"Atış kaçırılmışsa, ürün savunma oyuncusunun durumunu saldırı olarak değiştirecektir",1,1,1,1,1,1,1,1,1
+"Ürün, oyun bitene kadar sıra atamalarına devam edecektir",1,1,1,1,1,1,1,1,1
+"Ürün, saldırı oyuncusunun bir atışı ile savunma oyuncusunun son gemisi batarsa oyunu sonlandıracaktır",1,1,1,1,1,1,1,1,1
+"Ürün, oyuncuların istediği zaman oyunu sonlandırmasına izin verecektir",1,1,1,1,1,1,1,1,1
+"Oyun sona erdiğinde, ürün oyunculara oyunun bittiğini bildirecektir",1,1,1,1,1,1,1,1,1
+"Oyun sona erdiğinde bildirim, oyunun neden bittiğini (ör. bir oyuncu kazandı veya bir oyuncu oyunu sonlandırdı) içerecektir",1,1,1,1,1,1,1,1,1
+"Oyun sona erdiğinde, ürün her oyuncunun kendini oyuncu listesinde mevcut olarak tanımlamasına izin verecektir",1,1,1,1,1,1,1,1,1
+"Oyun sona erdiğinde, ürün her oyuncunun kendini oyuncu listesinden çıkarmasına izin verecektir",1,1,1,1,1,1,1,1,1
+"Sistem, arayanlar ve süpervizörler tarafından kolay kullanılabilir olmalıdır; tüm görevler 2 dakika içinde tamamlanabilmelidir",1,1,1,1,1,1,1,1,1
+"Sistem, arayanlar ve süpervizörler tarafından kolay öğrenilebilir olmalıdır; 10 dakika içinde sistemin kullanımı öğrenilmelidir",1,1,1,1,1,1,1,1,1
+"Sistem yanıt verebilir olmalıdır; DePaul TeleServices Merkezinde süpervizör arayanın programını görüntülerken yanıt süresi %90 için 2 saniyeyi, kalan %10 için 5 saniyeyi geçmemelidir",1,1,1,1,1,1,1,1,1
+"56k bağlantıda tüm işlemler için sistem yanıt süresi %90 için 6 saniyeyi geçmemelidir",1,1,1,1,1,1,1,1,1
+"112k veya daha hızlı bağlantıda tüm işlemler için sistem yanıt süresi %90 için 3 saniyeyi geçmemelidir",1,1,1,1,1,1,1,1,1
+"Sistem, yılın her günü yüksek erişilebilirliğe sahip olmalıdır; 12:00AM-6:00PM arası kullanılabilir olmalıdır",1,1,1,1,1,1,1,1,1
+"Sistem, yılın her günü 7:00AM-11:59PM arası kullanılabilir olmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün, tarayıcıdan bağımsız çalışmalıdır; Internet Explorer ve Netscape Navigator üzerinde çalışabilmelidir",1,1,1,1,1,1,1,1,1
+"Sistem, yalnızca süpervizörlerin boş zamanları ilan edebileceğini sağlamalıdır",1,1,1,1,1,1,1,1,1
+"Ürün yalnızca süpervizörlerin arayanın programını girebilmesini sağlamalıdır; süpervizörler boş zaman ilanlarına erişebilmelidir",1,1,1,1,1,1,1,1,1
+"Ürün yalnızca süpervizörlerin tüm arayanların programlarını görüntüleyebilmesini sağlamalıdır; süpervizörler boş zaman ilanlarına erişebilmelidir",1,1,1,1,1,1,1,1,1
+"Arayüz basit görünüme sahip olmalıdır; arayüz ve kullanılabilirlik anketinde %90 beta testçisi arayüzün yeterince basit olduğunu bildirmelidir",1,1,1,1,1,1,1,1,1
+"Arayüz, arayanlar ve süpervizörler için çekici olmalıdır; arayüz ve kullanılabilirlik anketinde %80 beta testçisi arayüzü çekici bulmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün GUI tabanlı İzleme Hizmetleri sağlamalıdır; sistem yöneticileri mesaj alışverişini izleyebilmeli, sorunları tahmin edip belirleyebilmeli ve iç/dış destek sağlayabilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün Chicago Şehir Uygulama Geliştirme Rehberi Çerçevesine uymalıdır; yapılandırılmış GUI sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Ürün İzleme Hizmetleri sağlamalıdır; sistem yöneticileri ve DBA’lar 2 haftalık kullanım sonrası kolayca kullanabilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün Hata Takip Hizmetleri sağlamalıdır; sistem yöneticileri ve DBA’lar işlem hatalarını %99 doğrulukla çözebilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün Portallar sağlamalıdır; sistem yöneticileri işlemleri ad-hoc raporlama ve KPI’lar ile analiz edebilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün Asenkron Mesajlaşma sağlamalıdır; paralel işlem yapılmasını ve iletişim yükünü azaltmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün Çoklu-iş parçacığı ve Yük Dengeleme sağlamalıdır; veri yükü ve trafik dalgalanmalarını yönetmelidir",1,1,1,1,1,1,1,0,1
+"Ürün mesajları 2 saniye içinde işlemelidir; maksimum mesaj işleme süresi 2 saniye olmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün sistemi her saniye mesaj için kontrol etmelidir; en fazla her 1 saniye yeni mesajlar kontrol edilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün Dinamik Değişim Desteği ve Şeffaf Kaynak ekleme sağlamalıdır; 1 günden fazla kesinti olmadan ölçeklenebilirlik sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Ürün %99 kullanılabilir olmalıdır; en yoğun müşteri hizmeti dönemlerinde hizmet kesintilerini önlemek için; normal iş günlerinde %99,99 kullanılabilir olmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün dayanıklı olmalıdır; standartlara uygun hata önleme tekniklerini kullanmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün dayanıklı ve hata toleranslı olmalıdır; kurtarma teknikleri, telafi edici işlemler ve yönlendirme ile hata toleransı sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Ürün tüm işlemleri işleyebilmelidir; yılda minimum 1 milyon işlem işlenmelidir",1,1,1,1,1,1,1,1,1
+"Ürün platform bağımsız olmalıdır; herhangi bir geliştirme ortamı ve platforma erişim sağlamalıdır",1,1,1,1,1,1,1,1,1
+"Ürün CSR ve Datastream ile arayüz sağlamalıdır; iki sistem arasında doğrudan arayüz olmadan mesaj alışverişi gerçekleştirmelidir",1,1,1,1,1,1,1,0,1
+"Ürün yükseltme, değişiklik veya yeni kaynak eklenmesi sırasında çalışmaya devam etmelidir; hizmet kesintisi olmadan çalışabilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün düzenli olarak güncellenmelidir; her altı ayda bir yeni ana özellik ve her altı ayda bir çeyreklik bakım sürümleri sunulacaktır",1,1,1,1,1,1,1,0,1
+"Ürün her platformda çalışabilmelidir; yeni teknolojiler mimari değişiklik gerektirmeden uygulanabilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün güvenliğe sahip olmalıdır; kimlik doğrulama ve yetkilendirme sağlamalıdır",1,1,1,1,1,1,1,1,1
+"Ürün bilgi güvenliğine sahip olmalıdır; şifreleme, WS-Security ve bütünlük kontrolleri ile gizliliği sağlamalıdır",1,1,1,1,1,1,1,1,1
+"Ürün denetim yeteneklerine sahip olmalıdır; mesajları en az bir yıl süreyle saklayarak denetim ve işlem takibi sağlamalıdır",1,1,1,1,1,1,1,1,1
+"Sistem IBM ve CCR marka standartlarını kullanmalıdır; arayüzde bir IBM ve bir CCR logosu bulunmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem herhangi bir CCR kullanıcısının çalışabileceği bilgisayarda görüntülenebilir olmalıdır; arayüz 800x600 çözünürlükte formatlanmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem arayüzü CCR isimlendirmesini kullanmalıdır; mevcut WCS sistemi ve raporlarında kullanılan aynı isimlendirme kullanılmalıdır",1,1,1,1,1,1,1,0,1
+"Arayüz, CCR yönetimi için çekici bir şekilde veri özetlemelidir; her rapor türü sonuç panelinde en az bir üst düzey özet göstermelidir",1,1,1,1,1,1,1,0,1
+"Sistem nokta ve tıklama arayüzü kullanmalıdır; tüm seçim ve navigasyon fonksiyonları fare veya klavye ile %100 erişilebilir olmalıdır",1,1,1,1,1,1,1,1,1
+"Arayüz kullanımı kolay olmalıdır; kullanıcıların %90’ı ilk kullanımda rapor üretebilmelidir, IBM kullanılabilirlik standartlarına uymalıdır",1,1,1,1,1,1,1,1,1
+"Raporlar kolay üretilmelidir; bir buton tıklamasıyla oluşturulmalı ve bir buton tıklamasıyla dışa aktarılabilmelidir",1,1,1,1,1,1,1,1,1
+"Kullanıcı kısa sürede talimat olmadan sistemi kullanabilmelidir; bir kullanım sonrası sistemin %90’ı anlaşılabilir ve hatırlanabilir olmalıdır",1,1,1,1,1,1,1,1,1
+"Tüm CCR kullanıcıları WCS sistemi dağıtılmadan önce eğitim almalıdır; bir eğitim oturumu tüm kullanıcıları kapsamalıdır",1,1,1,1,1,1,1,1,1
+"WCS sistemi uygun terminoloji ve isimlendirmeyi kullanmalıdır; tüm arayüz ve raporlar CCR kullanıcıları tarafından kullanılabilirlik testlerinden geçmelidir,"1,1,1,1,1,1,1,1,1
+"WCS sistemi her zaman kullanılabilir olmalıdır; IBM iç intraneti W3 erişilebilir olduğu sürece %95 kullanılabilirlik sağlanmalıdır",1,1,1,1,1,1,1,0,1
+"WCS sistemi diğer belirlenmiş WCS veritabanlarına bağlanabilmelidir",1,1,1,1,1,1,1,1,1
+"WCS sistemi ABD dışındaki bölgelerden veri dahil edebilmeli ve CCR yönetimi onaylarsa ABD dışından erişilebilmelidir",1,1,1,1,1,1,1,0,1
+"WCS sistemi Windows ortamında çalıştırılabilmelidir; IBM bilgisayarlarında Windows 2000 veya üzeri ile Internet üzerinden erişim sağlanmalıdır",1,1,1,1,1,1,1,0,1
+"WCS sisteminin Brio kısmı, dosyaları Microsoft Excel ve Lotus 1-2-3 formatlarında dışa aktarabilmelidir; arayüzde .xls veya .123 formatında rapor üreten butonlar olmalıdır",1,1,1,1,1,1,1,0,1
+"WCS sistemi, CCR kullanıcılarına sunulan verileri güncellemek için belirli bir günde WCS veritabanlarına sorgular çalıştırmalıdır; dış veritabanlarına veri yenileme için haftada bir kez sorgu yapılmalıdır",1,1,1,1,1,1,1,0,1
+"WCS sistemindeki tüm değişiklikler, güncellemeler ve eklemeler WCS Geliştirici ve WCS Kullanıcı Kılavuzlarına yansıtılmalıdır; her değişiklik sistem dokümantasyonunda yer almalıdır",1,1,1,1,1,1,1,0,1
+"Sistem yalnızca yetkili CCR çalışanları tarafından erişilebilir olmalıdır; kullanıcılar IBM intranet kullanıcı adı ve şifresi ile doğrulanmalıdır",1,1,1,1,1,1,1,1,1
+"WCS sistemi, herhangi bir kullanıcı için otomatik girişe izin vermemelidir; kullanıcı bilgisayarında WCS giriş bilgilerini içeren çerezler saklanmayacaktır",1,1,1,1,1,1,1,1,1
+"Her takım sahibi, takım sahibi sayfasına erişebilmek için kullanıcı adı ve şifre kullanarak doğrulanmalıdır",1,1,1,1,1,1,1,1,1
+"Komiser, lig ayarlarını düzenleyebilecek tek yetkili kullanıcı olacaktır",1,1,1,1,1,1,1,1,1
+"Her sayfa, mevcut sayfanın bulunduğu dizini gösteren bir navigasyon menüsü içermelidir",1,1,1,1,1,1,1,0,1
+"Her sayfa, eylem öğelerinin bir konumda ve navigasyon düğmelerinin başka bir konumda yer aldığı benzer bir format içermelidir",1,1,1,1,1,1,1,0,1
+"Mesaj panosu, lig sayfasında en son gönderilen 5 mesajı içermelidir; mesajlar mesajın ilk 150 karakterine kadar içeriği göstermelidir",1,1,1,1,1,1,1,0,1
+"Yeni bir kullanıcı, başlatma sayfasına ulaştıktan sonraki 30 saniye içinde lig ve takım sayfalarında gezinmelidir",1,1,1,1,1,1,1,1,1
+"Kullanıcılar, takım sahibi sayfasından “ekle”, “çıkar” ve “takas oyuncu” sayfalarına tek tıklamayla erişebilmelidir",1,1,1,1,1,1,1,1,1
+"Kullanıcılar, her sayfada en az 25 NFL oyuncu istatistiği ve puanlarını görüntüleyebilmelidir",1,1,1,1,1,1,1,1,1
+"Uygulama, oyuncuyu çıkarmadan veya takas etmeden önce kullanıcıdan onay almalıdır",1,1,1,1,1,1,1,1,1
+"Uygulama, her kullanıcı işlemini ağı üzerinden alınan isteğin dörtte biri saniye içinde tamamlayabilmelidir",1,1,1,1,1,1,1,1,1
+"Uygulamanın yıllık maksimum kesinti süresi 10 dakika olmalıdır",1,1,1,1,1,1,1,0,1
+"Uygulama bir web uygulama sunucusunda çalıştırılmalıdır",1,1,1,1,1,1,1,0,1
+"Disputes uygulamasında bir ekrandan diğerine geçişte maksimum bekleme süresi 5 saniyeyi geçmemelidir",1,1,1,1,1,1,1,1,1
+"Disputes uygulaması, 350 eş zamanlı kullanıcıyı performans düşüşü olmadan desteklemelidir",1,1,1,1,1,1,1,1,1
+"Disputes uygulaması 24x7x365 kullanılabilir olmalıdır; planlı bakım saatleri dışında, Pazartesi-Cumartesi 03:00-04:00 EST ve Pazar 01:00-05:00 EST",1,1,1,1,1,1,1,0,1
+"Disputes uygulaması, Statement Database ile arayüz oluşturmalıdır; tüm işlem detayları Statement Database’den alınmalıdır",1,1,1,1,1,1,1,0,1
+"Aktif kullanıcılar için önbelleğe alınan verileri depolamak üzere bir birincil veritabanı kullanılacaktır",1,1,1,1,1,1,1,0,1
+"Sistem %95 uptime sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Sistem profesyonel bir görünüme sahip olmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün tutarlı bir renk şeması ve yazı tiplerine sahip olmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, emlakçılar tarafından herhangi bir eğitim almadan kullanılabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem sezgisel ve kendini açıklayıcı olmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün, bir emlakçı için öğrenmesi kolay olmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün, emlakçı topluluğu tarafından doğal olarak anlaşılabilir semboller ve kelimeler kullanmalıdır",1,1,1,1,1,1,1,0,1
+"Ürün, arama sonuçlarını kabul edilebilir bir sürede üretmelidir",1,1,1,1,1,1,1,0,1
+"Arama sonuçları, kullanıcı arama kriterini girdikten sonra en geç 30 saniye içinde döndürülmelidir",1,1,1,1,1,1,1,1,1
+"Ürün, CMA raporunu kabul edilebilir bir sürede oluşturmalıdır",1,1,1,1,1,1,1,0,1
+"CMA raporu, kullanıcı CMA rapor kriterini girdikten sonra en geç 60 saniye içinde döndürülmelidir",1,1,1,1,1,1,1,1,1
+"Ürün, kişi ve randevu senkronizasyonunu kabul edilebilir bir sürede gerçekleştirmelidir",1,1,1,1,1,1,1,0,1
+"Ürün, ofis sistemi ile her saat senkronize olmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün, 24 saat/365 gün kullanılabilir olmalıdır",1,1,1,1,1,1,1,0,1
+"1000 erişimden sistem 999 kez kullanılabilir olmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün, internet bağlantısı yokken çevrimdışı modda çalışabilmelidir",1,1,1,1,1,1,1,1,1
+"Ürün, kullanıcıya daha önce indirilen arama sonuçlarını, CMA raporlarını ve randevuları görüntüleme imkanı sunmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün, bir arıza durumunda kullanıcı tercihlerini saklamalıdır",1,1,1,1,1,1,1,1,1
+"Kaydedilen kullanıcı tercihlerinin %100’ü sistem çevrimiçi olduğunda geri yüklenmelidir",1,1,1,1,1,1,1,1,1
+"Ürün, birden fazla uzak kullanıcıyı destekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün, aynı anda 1000 kullanıcıyı destekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Ürün, mevcut 1000 kullanıcıyı destekleyebilmeli; bu sayının gelecek yıl içinde 5 katına çıkması beklenmektedir",1,1,1,1,1,1,1,0,1
+"Ürün, eğitimsiz bir emlakçı tarafından, basılı talimatlara başvurmadan kurulabilmelidir",1,1,1,1,1,1,1,0,1
+"Eğitimsiz emlakçıların %90’ı, ürünü cihazlarına basılı talimat olmadan kurabilmelidir",1,1,1,1,1,1,1,1,1
+"Ürünün Windows CE ve Palm işletim sistemlerinde çalışması beklenmektedir",1,1,1,1,1,1,1,0,1
+"Sisteme yalnızca kayıtlı emlakçılar erişebilmelidir",1,1,1,1,1,1,1,1,1
+"Sistemin her kullanıcısı doğrulanmış ve yetkilendirilmiş olmalıdır",1,1,1,1,1,1,1,1,1
+"Ürün, yanlış veri girişini önlemelidir",1,1,1,1,1,1,1,1,1
+"Sistem, bir emlak danışmanının MLS bilgilerini sorgulamasına izin vermelidir",1,1,1,1,1,1,1,0,1
+"Kullanıcı, seçilen mülk için yol tarifi alabilmelidir",1,1,1,1,1,1,1,0,1
+"Kullanıcı, müşteriler için randevuları ve iletişim bilgilerini indirebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, arama sonuçlarında net mülk görselleri göstermelidir",1,1,1,1,1,1,1,0,1
+"Sistem, mesai saatleri boyunca tüm kullanıcı taleplerini/işlemlerini karşılayabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, 9:00–17:00 saatleri arasında aynı anda 10 kullanıcıyı destekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, önümüzdeki 10 yıl boyunca tüm hemşirelik öğrencilerini ve sınıflarını işleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, hemşirelik programı müfredatı ve sınıf/klinik planlamasını en az 5 yıl yönetebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, DePaul Üniversitesi Hemşirelik Departmanı’nda tipik bir ofis ortamında çalışabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, Program Yöneticileri/Hemşirelik Personeli tarafından kullanılan bilgisayarların tanımladığı spesifikasyonlara uygun şekilde kullanılmalıdır",1,1,1,1,1,1,1,0,1
+"İkincil bir veritabanı, geçmiş istatistik ve verileri depolamak için kullanılacaktır",1,1,1,1,1,1,1,0,1
+"Sistem, satıcı veya alıcıyı arayarak randevu planlamasına izin vermelidir",1,1,1,1,1,1,1,0,1
+"Randevu sisteminin ofis sistemiyle otomatik senkronizasyonunun ardından, emlakçı yeni müşteri randevularından haberdar olmalıdır",1,1,1,1,1,1,1,0,1
+"Emlakçı, belirli bir alan için mülk konumlarını gösteren haritayı alabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, satıcı veya alıcının randevu talebine yanıt verdiğinde emlakçıya bildirim göndermelidir",1,1,1,1,1,1,1,0,1
+"Ürün, kullanıcıya mülk arama sonuçlarını kaydetme imkanı sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, Program Yöneticileri/Hemşirelik Personeli tarafından kolayca kullanılabilir olmalıdır",1,1,1,1,1,1,1,0,1
+"Tüm kullanıcılar, bir günlük eğitim sonrası sistemi kullanabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, hemşirelik öğrencileri için ders ve klinik planlamasında hata yapmayı önlemeye yardımcı olmalıdır",1,1,1,1,1,1,1,0,1
+"Öğrenciler tarafından kaydedilen hata sayısı, ilk yıl %50 azaltılmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, Program Yöneticileri/Hemşirelik Personeli için sezgisel olmalıdır",1,1,1,1,1,1,1,0,1
+"3 program yöneticisi/hemşirelik personelinden 2’si, sınıf ve klinik planlamasını yönetmek için sistemi başarılı bir şekilde kullanabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, kullanıcı topluluğu tarafından doğal olarak anlaşılabilen sembol ve kelimeleri kullanmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem içindeki ifadeler, Standart İngilizce ve ulusal Hemşirelik Topluluğu terminolojisine uygun olmalıdır",1,1,1,1,1,1,1,0,1
+"Personel, bir görev setini zamanında tamamlayabilmelidir",1,1,1,1,1,1,1,0,1
+"Genel öğrenci yönetim görevlerinin yanıt süresi 5 saniyeyi geçmemeli ve plan oluşturma süresi 30 saniyeyi geçmemelidir",1,1,1,1,1,1,1,0,1
+"Sistem, 8:00–18:00 saatleri arasında kullanılabilir olmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, Windows XP Professional işletim sistemi içinde çalışabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, CampusConnect’in merkezi sunucusuyla arayüz oluşturabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, fakülte merkezi sunucusuyla arayüz oluşturabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, öğrenci ana sunucusuyla arayüz oluşturabilmelidir",1,1,1,1,1,1,1,0,1
+"Herhangi bir HTML tarayıcıyla arayüz oluşturabilmeliyiz",1,1,1,1,1,1,1,0,1
+"Sadece yetkili kullanıcılar klinik site bilgilerine erişebilmelidir",1,1,1,1,1,1,1,0,1
+"Program Yöneticileri/Hemşirelik Personeli, klinik site detaylarına erişebilen tek kişiler olmalıdır",1,1,1,1,1,1,1,0,1
+"Sadece yetkili kullanıcılar öğrencilerin kişisel bilgilerine erişebilmelidir",1,1,1,1,1,1,1,0,1
+"Dr Susan Poslusny ve Dr Julie Donalek, öğrencilerin kişisel bilgilerine erişebilen tek kişiler olmalıdır",1,1,1,1,1,1,1,0,1
+"Sadece yetkili kullanıcılar, CampusConnect ile arayüz oluşturan sistem kısmına erişebilmelidir",1,1,1,1,1,1,1,0,1
+"Fit kriteri: Dr Susan Poslusny ve Karen Sysol, CampusConnect ile arayüz oluşturan sistem için final sınıf bölüm planlamasına erişebilen tek kişiler olmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, yanlış veya geçersiz veri giriş olasılığını azaltmak için temel veri bütünlüğü denetimi sağlamalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, özel bilgileri organizasyonun bilgi politikası doğrultusunda korumalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, kötü niyetli müdahalelerden mümkün olduğunca güvenli olacak şekilde tasarlanmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, kendini tehditlerden izlemek için organizasyonun standart antivirüs yazılımını kullanmalıdır",1,1,1,1,1,1,1,0,1
+"Bir kohort, bölüm tarafından sunulan tek bir Program of Study ile ilişkilendirilmelidir",1,1,1,1,1,1,1,0,1
+"Program Yöneticileri ve Hemşirelik Personeli, bir kohorta öğrenci listesi ekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Program Yöneticileri ve Hemşirelik Personeli, bir kohorta tek bir öğrenci ekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Kohorta eklenen öğrenciler, kohortun Program of Study’sine uygun olmalıdır",1,1,1,1,1,1,1,0,1
+"Program Yöneticileri ve Hemşirelik Personeli, belirli bir kohort için tercih edilen ders sırasını belirleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Her kohort sırasındaki ders için, Program Yöneticileri ve Hemşirelik Personeli, dersin hangi çeyrekte verileceğini belirleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Program Yöneticileri ve Hemşirelik Personeli, bir ders sırasına yeni ders ekleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Uygulama güncellemeleri, NFL sezonunun ortasında Çarşamba sabahı 03:00–06:00 CST arasında yapılmalıdır",1,1,1,1,1,1,1,0,1
+"Yeni sistem sürümleri, her NFL sezonunun başında yayımlanmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, Sync Matrix 1.0 ve Exercise Management Tool 1.0 uygulamalarından veri görüntüleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, etkinlikleri Sync Matrix 1.0 veya Exercise Management Tool 1.0 uygulamalarına geri bağlayabilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, görüntülemeyi değiştirmeye izin vermelidir",1,1,1,1,1,1,1,0,1
+"Sistem, egzersizdeki tüm etkinliklerin bir görünümünü sunmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, verileri mekan ve anahtar etkinliklere göre filtreleyebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, bir kullanıcının zaman segmentlerini tanımlamasına izin vermelidir",1,1,1,1,1,1,1,0,1
+"Sistem, yerel ve egzersiz zamanını ayrı saatlerde gösterebilmelidir",1,1,1,1,1,1,1,0,1
+"Sistem, verilerin yenilenmesini duraklatma ve devam ettirme yeteneği sunmalıdır",1,1,1,1,1,1,1,0,1
+"Sistem, etkinlik veya faaliyetin gerçek zamanına karşı varsayılan zaman için grafikler sağlamalıdır",1,1,1,1,1,1,1,0,1
+"RFS sistemi, özellikle bütçe döneminde 7/24 kullanılabilir olmalıdır. Yıl boyunca %90, bütçe döneminde %98 kullanılabilir olmalıdır. %2 kullanılabilirlik, bildirilen durumdan 1 saat içinde sağlanacaktır",1,1,1,1,1,1,1,0,1
+"Kullanıcı iş istasyonlarının %98’i uygulama öncesi minimum donanım gereksinimlerini karşılamalıdır. Minimum HDD alanı: 400MB",1,1,1,1,1,1,1,0,1
+"Kullanıcı iş istasyonlarının %98’i uygulama öncesi minimum yazılım gereksinimlerini karşılamalıdır: IE 5.0, .NET Framework 1.1, IE Web Controls",1,1,1,1,1,1,1,0,1
+"RFS sistemi, BDW ortamı ile kolayca arayüz oluşturabilmelidir. 7 veri dosyası, her yıl bütçe süreci başlamadan bir gün önce 3 saat içinde RFS sistemine yüklenecektir. Test dosyaları (7) yıl boyunca 5 kez yüklenecektir",1,1,1,1,1,1,1,0,1
+"Gelir ve gider formüllerindeki değişiklikler, bütçe süreci başlamadan önce RFS sistemine uygulanmalıdır. Formüller alındıktan bir hafta içinde güncellenecek ve 2 hafta test için ayrılacaktır",1,1,1,1,1,1,1,0,1
+"BDW’ye eklenen yeni şubeler/kompleksler/bölgeler ve gelir/gider hesapları, bütçe başlangıcı öncesinde RFS sistemine yansıtılmalıdır. Tüm varlıklar (Ekim sonu itibarıyla) yüklenmelidir",1,1,1,1,1,1,1,0,1
+"Sadece yetkili kullanıcı RFS sistemine erişebilmelidir. Sadece UAS sisteminde var olan ve RFS sistemi rolüne atanmış kullanıcılar sisteme erişebilir",1,1,1,1,1,1,1,0,1
+"Kullanıcı erişimi, rolüne verilen izinlerle sınırlı olmalıdır. Her PCG hiyerarşi seviyesine rol atanır ve kullanıcılar bu rollere atanır. RFS sistemi işlevselliği rol izinlerine bağlıdır",1,1,1,1,1,1,1,0,1
+"Ürün, ENET Securities intranet sayfa standartlarına ve gereksinimlerine uymalıdır. Ürün görünümü ve hissiyatının %95’i uygulama öncesi onaylanmalıdır, kalan %5 bir ay içinde düzeltilip onaylanacaktır",1,1,1,1,1,1,1,0,1
+"Intranet sayfaları, 800x600 ve üzeri çözünürlüklerde uygun şekilde görüntülenmelidir. Tüm sayfaların %95’inde doğru görünüm sağlanmalıdır, kalan %5 bir hafta içinde düzeltilmelidir",1,1,1,1,1,1,1,0,1
+"Kullanıcılar, bütçelerini belirtilen süre içinde başarıyla tamamlamak için sistemi kolayca kullanabilmelidir. Ürün uygulanmadan önce bir haftalık eğitim ile kullanıcıların %98’i bütçeyi tamamlayacaktır",1,1,1,1,1,1,1,0,1
+"Ürün arayüzü hızlı olmalıdır. Arayüz yanıt süresi %90’ında 2 saniyeyi geçmemelidir, kalan %10’unda 10 saniyeyi geçmemelidir",1,1,1,1,1,1,1,0,1
+"Sistem, öncelikli iletişim aracı olarak kayıtlı e-posta adreslerini kullanacaktır",1,1,1,1,1,1,1,0,1
+"Sistem, rutin iletişim için ilgili tarafları bilgilendirecektir (sunulacak dersler, programlar vb.)",1,1,1,1,1,1,1,0,1
+"Sistem, kliniklerle ilgili değişikliklerde ilgili tarafları bilgilendirecektir (kapasite değişiklikleri, iptaller vb.)",1,1,1,1,1,1,1,0,1
+"Sistem, derslerle ilgili değişikliklerde ilgili tarafları bilgilendirecektir (iptaller, ders detay değişiklikleri, çeyrek bazlı ders değişiklikleri vb.)",1,1,1,1,1,1,1,0,1
+
+
