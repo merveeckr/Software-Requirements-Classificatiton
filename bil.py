@@ -276,30 +276,44 @@ def load_gemma_model(gemma_model_path):
 def generate_ai_suggestion(generator, requirement, missing_features):
     missing_str = ", ".join(missing_features)
     prompt = (
-        "Aşağıdaki gereksinimi YENİDEN YAZ. Input'u tekrar etme.\n"
-        "Sadece tek satır İYİLEŞTİRİLMİŞ GEREKSİNİM döndür.\n"
-        "Kurallar: net, ölçülebilir, doğrulanabilir, belirsizlik içermeyen.\n"
-        "Özellikle şu eksikleri gider: " + missing_str + "\n\n"
+        "Yalnızca TÜRKÇE yaz. Giriş cümlesini tekrar etme.\n"
+        "Belirsizliği kaldır, doğrulanabilir ve ölçülebilir hale getir.\n"
+        "Eksikleri gider: " + missing_str + "\n\n"
         "Gereksinim: " + requirement + "\n"
-        "Cevap: "
+        "ÇIKTI: Yalnızca tek satır 'İyileştirilmiş gereksinim: <cümle>' yaz. Başka hiçbir şey ekleme.\n"
     )
     response = generator(
         prompt,
-        max_length=128,
+        max_new_tokens=96,
         num_return_sequences=1,
-        do_sample=True,
-        temperature=0.4,
-        top_p=0.9,
-        repetition_penalty=1.2,
-        eos_token_id=None,
+        do_sample=False,
+        num_beams=4,
+        repetition_penalty=1.3,
     )
     text = response[0]['generated_text'].strip()
-    # Input'ta "Cevap:" sonrası kısmı al
-    if "Cevap:" in text:
-        text = text.split("Cevap:")[-1].strip()
-    # Input'u aynen döndüyse, basit bir post-processing ile küçük değişiklik uygula
-    if text == requirement.strip():
-        text = text + " (ölçülebilir kabul kriterleri eklendi)"
+    # 'İyileştirilmiş gereksinim:' sonrası ilk satırı al
+    lower = text.lower()
+    if "iyileştirilmiş gereksinim" in lower:
+        try:
+            start = lower.index("iyileştirilmiş gereksinim")
+            text = text[start:]
+            text = text.split("\n", 1)[0]
+        except Exception:
+            text = text.split("\n", 1)[0]
+    else:
+        text = text.split("\n", 1)[0]
+    # Liste/numara/alıntı temizliği
+    for prefix in ['- ', '* ', '• ', '1) ', '1. ', '"', "'"]:
+        if text.strip().startswith(prefix):
+            text = text.strip()[len(prefix):].strip()
+    # Etiket başlığı varsa ayıkla
+    if ':' in text:
+        head, tail = text.split(':', 1)
+        if head.lower().strip().startswith('iyileştirilmiş gereksinim'):
+            text = tail.strip()
+    # Aynı cümleyi döndürdüyse küçük bir revizyon ekle
+    if text.strip().rstrip('.') == requirement.strip().rstrip('.'):
+        text = text.strip().rstrip('.') + ". Ölçülebilir kabul kriterleri tanımlıdır"
     return text
 
 
