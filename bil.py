@@ -79,7 +79,9 @@ set_seed()
 class ReqDataset(Dataset):
     def __init__(self, texts: List[str], labels: np.ndarray, tokenizer, max_len=128):
         self.texts = texts
-        self.labels = labels.astype(np.float32)
+        # NaN/Inf temizliği ve aralık güvenliği
+        clean = np.nan_to_num(labels, nan=0.0, posinf=1.0, neginf=0.0)
+        self.labels = clean.astype(np.float32)
         self.tokenizer = tokenizer
         self.max_len = max_len
 
@@ -162,7 +164,9 @@ def evaluate_model(model, dataloader, device, threshold=THRESH):
         for batch in dataloader:
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
-            labels = batch['labels'].to(device).float().clamp(0.0, 1.0)
+            labels = batch['labels'].to(device).float()
+            labels = torch.nan_to_num(labels, nan=0.0, posinf=1.0, neginf=0.0)
+            labels = labels.clamp(0.0, 1.0)
 
             logits = model(input_ids, attention_mask)
             if not torch.isfinite(logits).all():
@@ -216,7 +220,9 @@ def train_loop(model, train_loader, val_loader, device, epochs=EPOCHS, lr=LR, we
         for step, batch in enumerate(loop):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
-            labels = batch['labels'].to(device).float().clamp(0.0, 1.0)
+            labels = batch['labels'].to(device).float()
+            labels = torch.nan_to_num(labels, nan=0.0, posinf=1.0, neginf=0.0)
+            labels = labels.clamp(0.0, 1.0)
 
             optimizer.zero_grad(set_to_none=True)
             logits = model(input_ids, attention_mask)
@@ -308,6 +314,23 @@ def main():
     # Evaluate
     metrics = evaluate_model(trained_model, val_loader, DEVICE)
     print("Final metrics:", metrics)
+
+    # Satır bazlı eksik özelliklerin yazdırılması
+    trained_model.eval()
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+    sample_count = min(5, len(X_val))
+    print("\nÖrnek eksik özellikler (ilk", sample_count, "kayıt):")
+    with torch.no_grad():
+        for i in range(sample_count):
+            text = X_val[i]
+            true_labels = y_val[i]
+            enc = tokenizer(text, truncation=True, padding='max_length', max_length=MAX_LEN, return_tensors='pt')
+            logits = trained_model(enc['input_ids'].to(DEVICE), enc['attention_mask'].to(DEVICE))
+            probs = torch.sigmoid(logits).cpu().numpy()[0]
+            preds = (probs >= THRESH).astype(int)
+            missing = [LABEL_COLS[j] for j, v in enumerate(preds) if v == 0]
+            print(f"- Gereksinim: {text[:80]}...")
+            print(f"  AI Eksikler: {missing}")
 
     
     # Gemma AI kullanımı

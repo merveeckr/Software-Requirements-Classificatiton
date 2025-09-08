@@ -7,6 +7,7 @@ import torch
 import streamlit as st
 
 from transformers import AutoTokenizer
+from bil import load_gemma_model, generate_ai_suggestion
 
 from bil import (
     BertBiLSTMCNN,
@@ -123,7 +124,21 @@ if uploaded is not None:
         mime="text/csv",
     )
 
-    st.info("Gemma entegrasyonu için uygulamaya üretim butonu eklenebilir (tekil/satır bazlı). Mevcut kütük kodunda `bil.py` içindeki `load_gemma_model` ve `generate_ai_suggestion` fonksiyonları kullanılacaktır.")
+    st.subheader("Gemma ile Öneri Üretimi")
+    with st.expander("Satır seçerek öneri üret"):
+        sel_idx = st.number_input("Satır index", min_value=0, max_value=len(edited)-1, value=0, step=1)
+        if st.button("Seçili satıra öneri üret"):
+            req_text = edited.iloc[sel_idx][TEXT_COL]
+            miss = [c for c in LABEL_COLS if int(edited.iloc[sel_idx].get(f"AI_{c}", 0)) == 0]
+            if not miss:
+                st.warning("AI'ya göre eksik yok.")
+            else:
+                try:
+                    gen = load_gemma_model(gemma_path)
+                    sug = generate_ai_suggestion(gen, req_text, miss)
+                    st.text_area("AI Önerisi", value=sug, height=200)
+                except Exception as e:
+                    st.error(f"Gemma çalıştırılamadı: {e}")
 else:
     st.write("CSV yükleyin ve analiz edin.")
 
