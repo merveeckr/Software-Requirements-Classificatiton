@@ -107,7 +107,7 @@ if uploaded is not None:
             **{f"AI_{c}": st.column_config.CheckboxColumn(f"AI {c}") for c in LABEL_COLS},
             **{f"User_{c}": st.column_config.CheckboxColumn(f"Kullanıcı {c}") for c in LABEL_COLS},
         },
-        disabled=[f"AI_{c}"] for c in LABEL_COLS,
+        disabled=[f"AI_{c}" for c in LABEL_COLS],
     )
 
     # Eksik etiketlerin çıkarımı
