@@ -1,0 +1,129 @@
+import os
+from typing import List, Dict
+
+import numpy as np
+import pandas as pd
+import torch
+import streamlit as st
+
+from transformers import AutoTokenizer
+
+from bil import (
+    BertBiLSTMCNN,
+    LABEL_COLS,
+    TEXT_COL,
+    MODEL_NAME,
+    MAX_LEN,
+    DEVICE,
+    THRESH,
+)
+
+
+@st.cache_resource(show_spinner=False)
+def load_model_and_tokenizer(model_name: str):
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = BertBiLSTMCNN(bert_model_name=model_name, num_labels=len(LABEL_COLS))
+    model.to(DEVICE)
+    # Eğer eğitilmiş ağırlıklar varsa yükle
+    if os.path.exists("best_model.pt"):
+        state = torch.load("best_model.pt", map_location=DEVICE)
+        model.load_state_dict(state, strict=False)
+    model.eval()
+    return model, tokenizer
+
+
+def batch_predict(model: BertBiLSTMCNN, tokenizer, texts: List[str], max_len: int, threshold: float) -> np.ndarray:
+    predictions = []
+    batch_size = 16
+    for i in range(0, len(texts), batch_size):
+        chunk = texts[i:i+batch_size]
+        enc = tokenizer(
+            chunk,
+            truncation=True,
+            padding=True,
+            max_length=max_len,
+            return_tensors="pt",
+        )
+        with torch.no_grad():
+            logits = model(enc["input_ids"].to(DEVICE), enc["attention_mask"].to(DEVICE))
+            probs = torch.sigmoid(logits).cpu().numpy()
+            preds = (probs >= threshold).astype(int)
+        predictions.append(preds)
+    return np.vstack(predictions) if predictions else np.zeros((0, len(LABEL_COLS)), dtype=int)
+
+
+def build_editable_frame(df: pd.DataFrame, preds: np.ndarray) -> pd.DataFrame:
+    pred_df = pd.DataFrame(preds, columns=[f"AI_{c}" for c in LABEL_COLS])
+    merged = pd.concat([df.reset_index(drop=True), pred_df], axis=1)
+    # Kullanıcı işaretlemesi için sütunlar
+    for c in LABEL_COLS:
+        merged[f"User_{c}"] = merged.get(c, 0)
+    return merged
+
+
+st.set_page_config(page_title="Gereksinim Analizi", layout="wide")
+st.title("Gereksinim Analizi: BERTürk + Gemma Öneri")
+
+with st.sidebar:
+    st.markdown("**Model Ayarları**")
+    model_name = st.text_input("BERT Model", value=MODEL_NAME)
+    threshold = st.slider("Eşik (sigmoid)", min_value=0.05, max_value=0.95, value=float(THRESH), step=0.05)
+    st.divider()
+    st.markdown("**Gemma Ayarları** (opsiyonel)")
+    gemma_path = st.text_input("Gemma model yolu", value="I:\\gemma")
+
+uploaded = st.file_uploader("CSV yükleyin", type=["csv"])
+
+if uploaded is not None:
+    df = pd.read_csv(uploaded)
+    if TEXT_COL not in df.columns:
+        st.error(f"CSV içinde '{TEXT_COL}' kolonu bulunamadı.")
+        st.stop()
+    # Eksikse label kolonları ekle
+    for c in LABEL_COLS:
+        if c not in df.columns:
+            df[c] = 0
+
+    st.success(f"Yüklendi: {uploaded.name}, satır: {len(df)}")
+
+    with st.spinner("Model yükleniyor..."):
+        model, tokenizer = load_model_and_tokenizer(model_name)
+
+    texts = df[TEXT_COL].fillna("").astype(str).tolist()
+    with st.spinner("Tahmin yapılıyor..."):
+        preds = batch_predict(model, tokenizer, texts, MAX_LEN, threshold)
+
+    work = build_editable_frame(df[[TEXT_COL] + LABEL_COLS], preds)
+
+    st.subheader("Sonuçlar - Düzenlenebilir")
+    edited = st.data_editor(
+        work,
+        num_rows="dynamic",
+        use_container_width=True,
+        height=500,
+        column_config={
+            TEXT_COL: st.column_config.TextColumn("Gereksinim", width=400),
+            **{c: st.column_config.CheckboxColumn(c) for c in LABEL_COLS},
+            **{f"AI_{c}": st.column_config.CheckboxColumn(f"AI {c}") for c in LABEL_COLS},
+            **{f"User_{c}": st.column_config.CheckboxColumn(f"Kullanıcı {c}") for c in LABEL_COLS},
+        },
+        disabled=[f"AI_{c}"] for c in LABEL_COLS,
+    )
+
+    # Eksik etiketlerin çıkarımı
+    def row_missing(row) -> List[str]:
+        return [c for c in LABEL_COLS if int(row.get(f"AI_{c}", 0)) == 0]
+
+    edited["Eksikler_AI"] = edited.apply(row_missing, axis=1)
+
+    st.download_button(
+        label="CSV indir",
+        data=edited.to_csv(index=False).encode("utf-8"),
+        file_name="gereksinim_sonuclari.csv",
+        mime="text/csv",
+    )
+
+    st.info("Gemma entegrasyonu için uygulamaya üretim butonu eklenebilir (tekil/satır bazlı). Mevcut kütük kodunda `bil.py` içindeki `load_gemma_model` ve `generate_ai_suggestion` fonksiyonları kullanılacaktır.")
+else:
+    st.write("CSV yükleyin ve analiz edin.")
+
