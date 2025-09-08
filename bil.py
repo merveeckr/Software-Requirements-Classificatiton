@@ -162,10 +162,16 @@ def evaluate_model(model, dataloader, device, threshold=THRESH):
         for batch in dataloader:
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
-            labels = batch['labels'].to(device)
+            labels = batch['labels'].to(device).float().clamp(0.0, 1.0)
 
             logits = model(input_ids, attention_mask)
+            if not torch.isfinite(logits).all():
+                print("[WARN] Non-finite logits detected during evaluation. Skipping batch.")
+                continue
             loss = loss_fn(logits, labels)
+            if not torch.isfinite(loss):
+                print("[WARN] Non-finite loss detected during evaluation. Skipping batch.")
+                continue
             total_loss += loss.item() * input_ids.size(0)
 
             probs = torch.sigmoid(logits).cpu().numpy()
@@ -199,7 +205,7 @@ def train_loop(model, train_loader, val_loader, device, epochs=EPOCHS, lr=LR, we
     ]
     optimizer = AdamW(optimizer_grouped_parameters, lr=lr)
     total_steps = len(train_loader) * epochs
-    scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=int(0.06*total_steps), num_training_steps=total_steps)
+    scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=max(1, int(0.10*total_steps)), num_training_steps=total_steps)
     loss_fn = nn.BCEWithLogitsLoss()
 
     best_f1 = -1.0
@@ -207,14 +213,25 @@ def train_loop(model, train_loader, val_loader, device, epochs=EPOCHS, lr=LR, we
         model.train()
         epoch_loss = 0.0
         loop = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}", leave=False)
-        for batch in loop:
+        for step, batch in enumerate(loop):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
-            labels = batch['labels'].to(device)
+            labels = batch['labels'].to(device).float().clamp(0.0, 1.0)
 
-            optimizer.zero_grad()
+            optimizer.zero_grad(set_to_none=True)
             logits = model(input_ids, attention_mask)
+            if not torch.isfinite(logits).all():
+                print("[WARN] Non-finite logits detected during training. Skipping batch.")
+                continue
             loss = loss_fn(logits, labels)
+            if not torch.isfinite(loss):
+                with torch.no_grad():
+                    l_min = float(torch.min(logits).item())
+                    l_max = float(torch.max(logits).item())
+                    y_min = float(torch.min(labels).item())
+                    y_max = float(torch.max(labels).item())
+                print(f"[WARN] Non-finite loss. logits[min,max]=[{l_min:.4f},{l_max:.4f}] labels[min,max]=[{y_min:.4f},{y_max:.4f}] -> skipping batch")
+                continue
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
             optimizer.step()
