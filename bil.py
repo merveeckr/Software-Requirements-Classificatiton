@@ -269,7 +269,9 @@ def load_gemma_model(gemma_model_path):
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        device=device
+        device=device,
+        return_full_text=False,
+        clean_up_tokenization_spaces=True,
     )
     return generator
 
@@ -290,7 +292,8 @@ def generate_ai_suggestion(generator, requirement, missing_features):
         num_beams=4,
         repetition_penalty=1.3,
     )
-    text = response[0]['generated_text'].strip()
+    # transformers >=4.35 text-generation returns list of dicts with 'generated_text'
+    text = response[0].get('generated_text', '').strip() if isinstance(response, list) else str(response)
     # 'İyileştirilmiş gereksinim:' sonrası ilk satırı al
     lower = text.lower()
     if "iyileştirilmiş gereksinim" in lower:
