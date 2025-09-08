@@ -1,29 +1,40 @@
 import os
+import sys
 from typing import List, Dict
 
 import numpy as np
 import pandas as pd
-import torch
 import streamlit as st
 
-from transformers import AutoTokenizer
-from bil import load_gemma_model, generate_ai_suggestion
+# Python 3.13 guard (PyTorch henüz desteklemiyor olabilir)
+if sys.version_info >= (3, 13):
+    st.error("Python 3.13 ile PyTorch/Transformers henüz stabil değil. Lütfen Python 3.10–3.12 kullanın.")
+    st.stop()
 
-from bil import (
-    BertBiLSTMCNN,
-    LABEL_COLS,
-    TEXT_COL,
-    MODEL_NAME,
-    MAX_LEN,
-    DEVICE,
-    THRESH,
-)
+# Lazy import: torch/transformers/bil yalnızca guard sonrası
+try:
+    from transformers import AutoTokenizer
+    from bil import (
+        BertBiLSTMCNN,
+        LABEL_COLS,
+        TEXT_COL,
+        MODEL_NAME,
+        MAX_LEN,
+        DEVICE,
+        THRESH,
+        load_gemma_model,
+        generate_ai_suggestion,
+    )
+except Exception as import_err:
+    st.error(f"Kütüphane import hatası: {import_err}. Lütfen Python sürümünüzü ve paket kurulumlarınızı kontrol edin.")
+    st.stop()
 
 
 @st.cache_resource(show_spinner=False)
 def load_model_and_tokenizer(model_name: str):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = BertBiLSTMCNN(bert_model_name=model_name, num_labels=len(LABEL_COLS))
+    import torch  # local import to avoid top-level import on unsupported envs
     model.to(DEVICE)
     # Eğer eğitilmiş ağırlıklar varsa yükle
     if os.path.exists("best_model.pt"):
@@ -45,6 +56,7 @@ def batch_predict(model: BertBiLSTMCNN, tokenizer, texts: List[str], max_len: in
             max_length=max_len,
             return_tensors="pt",
         )
+        import torch  # local import
         with torch.no_grad():
             logits = model(enc["input_ids"].to(DEVICE), enc["attention_mask"].to(DEVICE))
             probs = torch.sigmoid(logits).cpu().numpy()
