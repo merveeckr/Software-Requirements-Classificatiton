@@ -43,14 +43,14 @@ from sklearn.model_selection import train_test_split
 # SETTINGS
 
 
-MODEL_NAME = r"I:\\BERTürk"   
-CSV_PATH = r"I:\\proje\\yeni.csv"  
+MODEL_NAME = os.environ.get("BERT_MODEL", "dbmdz/bert-base-turkish-uncased")   
+CSV_PATH = os.environ.get("CSV_PATH", "/workspace/yeni.csv")  
 TEXT_COL = "Requirement"
 LABEL_COLS = ['Appropriate','Complete','Conforming','Correct','Feasible','Necessary','Singular','Unambiguous','Verifiable']
 
 RANDOM_SEED = 42
 BATCH_SIZE = 8          
-EPOCHS = 3
+EPOCHS = int(os.environ.get("EPOCHS", "1"))
 LR = 1e-5
 WEIGHT_DECAY = 1e-2
 MAX_LEN = 128
@@ -372,8 +372,13 @@ def main():
     
     # Gemma AI kullanımı
     
-    gemma_path = r"I:\gemma"
-    generator = load_gemma_model(gemma_path)
+    gemma_model_id = os.environ.get("GEMMA_MODEL", "")
+    generator = None
+    if gemma_model_id:
+        try:
+            generator = load_gemma_model(gemma_model_id)
+        except Exception as e:
+            print("Gemma yüklenemedi:", e)
 
     # Örnek kullanım
     example_req = "Bu ürünün görünümü, profesyonel ve hatasız olmalıdır."
@@ -383,7 +388,7 @@ def main():
     }
     missing = [k for k,v in prediction.items() if v==0]
 
-    if missing:
+    if generator and missing:
         suggestion = generate_ai_suggestion(generator, example_req, missing)
         print("\nAI Önerisi:\n", suggestion)
 
