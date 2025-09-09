@@ -15,3 +15,18 @@ streamlit run app.py
 ```
 
 3) Uygulamada CSV dosyanızı yükleyin, eşiği ayarlayın ve önerileri üretin.
+
+## Benchmark (karşılaştırma)
+
+Çeşitli gömme (embedding) ve mimarileri kıyaslamak için:
+
+```
+python bench.py
+```
+
+Ortam değişkenleri:
+- `CSV_PATH=/workspace/yeni.csv`
+- `BERT_MODEL=dbmdz/bert-base-turkish-uncased`
+- `EPOCHS=1`
+
+Çıktı; eğitim süresi, örnek başına tahmin süresi, F1-macro, Hamming ve accuracy verir. Sentence-Transformers adayları: `paraphrase-multilingual-MiniLM-L12-v2`, `intfloat/multilingual-e5-small`, `intfloat/multilingual-e5-base`, `LaBSE`.
