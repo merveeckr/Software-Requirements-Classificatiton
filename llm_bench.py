@@ -191,15 +191,43 @@ def main():
         os.environ["HF_OFFLINE"] = "1"
 
     # Resolve CSV path
-    csv_path = args.csv_path or os.environ.get("CSV_PATH") or "yeni.csv"
+    csv_path = args.csv_path or os.environ.get("CSV_PATH") or "C:/Users/92009133/python_envs/proje/yeni.csv"
     if not os.path.isfile(csv_path):
         raise ValueError(f"CSV not found: {csv_path}. Pass --csv C:/path/yeni.csv or set CSV_PATH.")
 
-    clf_model = args.bert_model or os.environ.get("BERT_MODEL") or "dbmdz/bert-base-turkish-uncased"
+    clf_model = args.bert_model or os.environ.get("BERT_MODEL") or "C:/Users/92009133/python_envs/models/bert"
     # LLM listesi: GGUF yolunu "gguf", HF model id'yi "hf" ile işaretle
     # Örnek: --specs "C:\\models\\gemma-2b.Q4.gguf:gguf;google/gemma-2b-it:hf"
-    specs_env = args.llm_specs or os.environ.get("LLM_SPECS", "")
-    specs: List[Tuple[str, str]] = []
+    # Varsayılan model listesi
+    default_models = [
+        "C:/Users/92009133/python_envs/models/gemma:hf",
+        "C:/Users/92009133/python_envs/models/llama-3.2-1b:hf",
+        "C:/Users/92009133/python_envs/models/phi3.5:hf"
+    ]
+
+    # Komut satırı argümanı veya environment variable kontrolü
+    specs_env = args.llm_specs if args.llm_specs is not None else os.environ.get("LLM_SPECS", "")
+    specs = []
+
+    
+    
+
+    # specs_env string olduğundan artık strip güvenli
+    if specs_env.strip():
+        specs_list = specs_env.split(",")
+    else:
+        specs_list = default_models
+
+    print(specs_list)
+    for model in specs_list:
+        # ":" ile ayır, sadece sondaki kısmı kind olarak al
+        if ":" in model:
+            name, kind = model.rsplit(":", 1)
+        else:
+            name, kind = model, "hf"  # default kind
+        specs.append((name.strip(), kind.strip()))
+
+    
     if specs_env.strip():
         parts = specs_env.split(";")
         for p in parts:
@@ -223,4 +251,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
