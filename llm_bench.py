@@ -1,4 +1,5 @@
 import os
+import argparse
 import time
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
@@ -179,11 +180,25 @@ def llm_bench(csv_path: str, classifier_model_name: str, llm_specs: List[Tuple[s
 
 
 def main():
-    csv_path = os.environ.get("CSV_PATH", "/workspace/yeni.csv")
-    clf_model = os.environ.get("BERT_MODEL", "dbmdz/bert-base-turkish-uncased")
+    parser = argparse.ArgumentParser(description="LLM suggestion benchmark")
+    parser.add_argument("--csv", dest="csv_path", type=str, default=None, help="CSV path (yeni.csv)")
+    parser.add_argument("--bert-model", dest="bert_model", type=str, default=None, help="Classifier BERT model path or HF id")
+    parser.add_argument("--specs", dest="llm_specs", type=str, default=None, help="LLM specs 'path:gguf;id_or_path:hf'")
+    parser.add_argument("--offline", dest="offline", action="store_true", help="Enable HF offline mode")
+    args = parser.parse_args()
+
+    if args.offline:
+        os.environ["HF_OFFLINE"] = "1"
+
+    # Resolve CSV path
+    csv_path = args.csv_path or os.environ.get("CSV_PATH") or "yeni.csv"
+    if not os.path.isfile(csv_path):
+        raise ValueError(f"CSV not found: {csv_path}. Pass --csv C:/path/yeni.csv or set CSV_PATH.")
+
+    clf_model = args.bert_model or os.environ.get("BERT_MODEL") or "dbmdz/bert-base-turkish-uncased"
     # LLM listesi: GGUF yolunu "gguf", HF model id'yi "hf" ile işaretle
-    # Örnek: LLM_SPECS=C:\\models\\gemma-2b.Q4.gguf:gguf;google/gemma-2b-it:hf
-    specs_env = os.environ.get("LLM_SPECS", "")
+    # Örnek: --specs "C:\\models\\gemma-2b.Q4.gguf:gguf;google/gemma-2b-it:hf"
+    specs_env = args.llm_specs or os.environ.get("LLM_SPECS", "")
     specs: List[Tuple[str, str]] = []
     if specs_env.strip():
         parts = specs_env.split(";")
@@ -197,7 +212,7 @@ def main():
         specs = []
 
     if not specs:
-        print("No LLM specs provided. Set LLM_SPECS to run (e.g., C:\\models\\gemma.gguf:gguf;google/gemma-2b-it:hf)")
+        print("No LLM specs provided. Use --specs or LLM_SPECS (e.g., C:\\models\\gemma.gguf:gguf;google/gemma-2b-it:hf)")
         return
 
     results = llm_bench(csv_path, clf_model, specs)
