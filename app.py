@@ -122,20 +122,52 @@ if uploaded is not None:
     except Exception:
         pass
 
-    st.subheader("Sonuçlar - Düzenlenebilir")
-    edited = st.data_editor(
-        work,
-        num_rows="dynamic",
-        use_container_width=True,
-        height=500,
-        column_config={
-            TEXT_COL: st.column_config.TextColumn("Gereksinim", width=400),
-            **{c: st.column_config.CheckboxColumn(c) for c in LABEL_COLS},
-            **{f"AI_{c}": st.column_config.CheckboxColumn(f"AI {c}") for c in LABEL_COLS},
-            **{f"User_{c}": st.column_config.CheckboxColumn(f"Kullanıcı {c}") for c in LABEL_COLS},
-        },
-        disabled=[f"AI_{c}" for c in LABEL_COLS],
-    )
+    st.subheader("Sonuçlar")
+    ai_cols = [f"AI_{c}" for c in LABEL_COLS]
+    user_cols = [f"User_{c}" for c in LABEL_COLS]
+
+    left, right = st.columns(2)
+    with left:
+        st.markdown("**AI tahminleri**")
+        st.dataframe(
+            work[[TEXT_COL] + ai_cols],
+            use_container_width=True,
+            height=500,
+        )
+    with right:
+        st.markdown("**Kullanıcı işaretlemeleri**")
+        user_view = work[[TEXT_COL] + user_cols].copy()
+        edited_user = st.data_editor(
+            user_view,
+            num_rows="dynamic",
+            use_container_width=True,
+            height=500,
+            column_config={
+                TEXT_COL: st.column_config.TextColumn("Gereksinim", width=400),
+                **{uc: st.column_config.CheckboxColumn(uc.replace("User_", "Kullanıcı ")) for uc in user_cols},
+            },
+        )
+
+    # Per-row agreement
+    try:
+        ai_mat = work[ai_cols].astype(bool).to_numpy()
+        user_mat = edited_user[user_cols].astype(bool).to_numpy()
+        agree_ratio = (ai_mat == user_mat).mean(axis=1)
+        summary = pd.DataFrame({
+            TEXT_COL: work[TEXT_COL].astype(str).str.slice(0, 80) + "...",
+            "Uyum_orani": np.round(agree_ratio, 3),
+            "Uyum_sayisi": (ai_mat == user_mat).sum(axis=1),
+            "Toplam_label": ai_mat.shape[1]
+        })
+        st.markdown("**AI vs Kullanıcı Uyum Özeti**")
+        st.dataframe(summary, use_container_width=True, height=240)
+    except Exception as e:
+        st.warning(f"Uyum hesabı yapılamadı: {e}")
+
+    # Birleştirilmiş çerçeve (AI + User) diğer adımlar için
+    merged = work[[TEXT_COL] + ai_cols].copy()
+    for uc in user_cols:
+        merged[uc] = edited_user[uc].astype(bool)
 
     # Eksik etiketlerin çıkarımı
     def row_missing(row) -> List[str]:
@@ -152,10 +184,10 @@ if uploaded is not None:
 
     st.subheader("Gemma ile Öneri Üretimi")
     with st.expander("Satır seçerek öneri üret"):
-        sel_idx = st.number_input("Satır index", min_value=0, max_value=len(edited)-1, value=0, step=1)
+        sel_idx = st.number_input("Satır index", min_value=0, max_value=len(merged)-1, value=0, step=1)
         if st.button("Seçili satıra öneri üret"):
-            req_text = edited.iloc[sel_idx][TEXT_COL]
-            miss = [c for c in LABEL_COLS if int(edited.iloc[sel_idx].get(f"AI_{c}", 0)) == 0]
+            req_text = merged.iloc[sel_idx][TEXT_COL]
+            miss = [c for c in LABEL_COLS if int(merged.iloc[sel_idx].get(f"AI_{c}", 0)) == 0]
             if not miss:
                 st.warning("AI'ya göre eksik yok.")
             else:
