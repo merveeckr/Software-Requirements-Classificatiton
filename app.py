@@ -151,6 +151,38 @@ if uploaded is not None:
                     st.text_area("AI Önerisi", value=sug, height=200)
                 except Exception as e:
                     st.error(f"Gemma çalıştırılamadı: {e}")
+
+    st.subheader("Tekil Gereksinim Analizi ve Öneri")
+    single_req = st.text_area("Gereksinimi girin", placeholder="Gereksinimi buraya yapıştırın", height=120)
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Eksikleri Analiz Et") and single_req.strip():
+            enc = tokenizer(
+                [single_req],
+                truncation=True,
+                padding=True,
+                max_length=MAX_LEN,
+                return_tensors="pt",
+            )
+            with torch.no_grad():
+                logits = model(enc["input_ids"].to(DEVICE), enc["attention_mask"].to(DEVICE))
+                probs = torch.sigmoid(logits).cpu().numpy()[0]
+                single_preds = (probs >= threshold).astype(int)
+            single_missing = [LABEL_COLS[i] for i, v in enumerate(single_preds) if v == 0]
+            st.session_state["single_missing"] = single_missing
+            st.write("Eksikler:", single_missing if single_missing else "Yok")
+    with col2:
+        if st.button("Gemma ile Öneri Üret") and single_req.strip():
+            miss = st.session_state.get("single_missing", [])
+            if not miss:
+                st.warning("Önce eksikleri analiz edin veya eksik yok.")
+            else:
+                try:
+                    gen = load_gemma_model(gemma_path)
+                    sug = generate_ai_suggestion(gen, single_req, miss)
+                    st.text_area("İyileştirilmiş Gereksinim", value=sug, height=180)
+                except Exception as e:
+                    st.error(f"Gemma çalıştırılamadı: {e}")
 else:
     st.write("CSV yükleyin ve analiz edin.")
 
