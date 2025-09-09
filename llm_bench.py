@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 import torch
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from bil import (
     BertBiLSTMCNN,
@@ -24,6 +24,16 @@ try:
     HAS_LLAMA = True
 except Exception:
     HAS_LLAMA = False
+
+# Offline/SSL settings for corporate environments
+OFFLINE = os.environ.get("HF_OFFLINE", "0") == "1"
+try:
+    import certifi  # type: ignore
+    ca = certifi.where()
+    os.environ.setdefault("SSL_CERT_FILE", ca)
+    os.environ.setdefault("REQUESTS_CA_BUNDLE", ca)
+except Exception:
+    pass
 
 
 @dataclass
@@ -87,7 +97,13 @@ def run_llama_cpp(model_path: str, prompts: List[str], max_new_tokens: int = 128
 
 def run_hf_pipeline(model_id: str, prompts: List[str], max_new_tokens: int = 128) -> Tuple[List[str], float]:
     from transformers import pipeline
-    gen = pipeline("text-generation", model=model_id, device=0 if torch.cuda.is_available() else -1, return_full_text=False)
+    # Offline-friendly: if OFFLINE and model_id is a local directory, preload objects
+    if OFFLINE and os.path.isdir(model_id):
+        tok = AutoTokenizer.from_pretrained(model_id, local_files_only=True)
+        mdl = AutoModelForCausalLM.from_pretrained(model_id, local_files_only=True)
+        gen = pipeline("text-generation", model=mdl, tokenizer=tok, device=0 if torch.cuda.is_available() else -1, return_full_text=False)
+    else:
+        gen = pipeline("text-generation", model=model_id, device=0 if torch.cuda.is_available() else -1, return_full_text=False)
     outputs = []
     # warmup
     _ = gen("test", max_new_tokens=8)
@@ -174,7 +190,8 @@ def main():
         for p in parts:
             if not p.strip():
                 continue
-            name, kind = p.split(":", 1)
+            # Windows path contains a drive letter 'C:\\' -> split from the right
+            name, kind = p.rsplit(":", 1)
             specs.append((name.strip(), kind.strip()))
     else:
         specs = []
