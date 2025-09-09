@@ -173,11 +173,11 @@ if uploaded is not None:
     def row_missing(row) -> List[str]:
         return [c for c in LABEL_COLS if int(row.get(f"AI_{c}", 0)) == 0]
 
-    edited["Eksikler_AI"] = edited.apply(row_missing, axis=1)
+    merged["Eksikler_AI"] = merged.apply(row_missing, axis=1)
 
     st.download_button(
         label="CSV indir",
-        data=edited.to_csv(index=False).encode("utf-8"),
+        data=merged.to_csv(index=False).encode("utf-8"),
         file_name="gereksinim_sonuclari.csv",
         mime="text/csv",
     )
