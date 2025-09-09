@@ -52,7 +52,9 @@ class BenchmarkResult:
 def load_dataset(csv_path: str, test_size: float = 0.15, seed: int = 42):
     df = pd.read_csv(csv_path)
     texts = df[TEXT_COL].fillna("").astype(str).tolist()
-    labels = df[LABEL_COLS].astype(float).values
+    # Clean labels: coerce -> fillna 0 -> clip to {0,1} -> int
+    lab = df[LABEL_COLS].apply(pd.to_numeric, errors='coerce').fillna(0.0).clip(0.0, 1.0).astype(int)
+    labels = lab.values.astype(float)
     X_train, X_val, y_train, y_val = train_test_split(
         texts, labels, test_size=test_size, random_state=seed, shuffle=True
     )
