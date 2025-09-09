@@ -30,3 +30,19 @@ Ortam değişkenleri:
 - `EPOCHS=1`
 
 Çıktı; eğitim süresi, örnek başına tahmin süresi, F1-macro, Hamming ve accuracy verir. Sentence-Transformers adayları: `paraphrase-multilingual-MiniLM-L12-v2`, `intfloat/multilingual-e5-small`, `intfloat/multilingual-e5-base`, `LaBSE`.
+
+### LLM öneri kıyaslaması
+
+LLM’lerin öneri kalitesini (eksik onarım oranı, gecikme) ölçmek için:
+
+```
+set CSV_PATH=C:\path\to\yeni.csv
+set BERT_MODEL=C:\models\dbmdz-bert-turkish  (veya HF id)
+set LLM_SPECS=C:\models\gemma-2b.Q4.gguf:gguf;google/gemma-2b-it:hf
+
+python llm_bench.py
+```
+
+Notlar:
+- GGUF için `llama-cpp-python` gerekir. HF id için internet veya kurum sertifikası gerekir; offline için GGUF önerilir.
+- Rapor: repair_rate (eksik etiketlerin 1’e dönme oranı), Δhamming, ms/sample.
