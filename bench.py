@@ -27,6 +27,16 @@ from bil import (
     DEVICE,
     THRESH,
 )
+# Offline/SSL settings (corporate environments)
+OFFLINE = os.environ.get("HF_OFFLINE", "0") == "1"
+try:
+    import certifi  # type: ignore
+    ca = certifi.where()
+    os.environ.setdefault("SSL_CERT_FILE", ca)
+    os.environ.setdefault("REQUESTS_CA_BUNDLE", ca)
+except Exception:
+    pass
+
 
 
 @dataclass
@@ -77,7 +87,7 @@ class SimpleTextDataset(Dataset):
 
 def run_bert_bilstm_cnn(csv_path: str, model_name: str, epochs: int = 1, batch_size: int = 8, lr: float = 1e-5) -> BenchmarkResult:
     X_train, X_val, y_train, y_val = load_dataset(csv_path)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=OFFLINE)
 
     train_ds = SimpleTextDataset(X_train, y_train, tokenizer, MAX_LEN)
     val_ds = SimpleTextDataset(X_val, y_val, tokenizer, MAX_LEN)
@@ -145,6 +155,9 @@ def run_bert_bilstm_cnn(csv_path: str, model_name: str, epochs: int = 1, batch_s
 
 def run_st_embedding_logreg(csv_path: str, st_model_name: str, threshold: float = 0.5) -> BenchmarkResult:
     X_train, X_val, y_train, y_val = load_dataset(csv_path)
+    # If OFFLINE, st_model_name must be a local directory
+    if OFFLINE and not os.path.isdir(st_model_name):
+        raise RuntimeError(f"OFFLINE=1: SentenceTransformer path not found: {st_model_name}")
     st_model = SentenceTransformer(st_model_name)
 
     # Encode
@@ -184,13 +197,18 @@ def run_st_embedding_logreg(csv_path: str, st_model_name: str, threshold: float 
 def main():
     csv_path = os.environ.get("CSV_PATH", "/workspace/yeni.csv")
     bert_model = os.environ.get("BERT_MODEL", "dbmdz/bert-base-turkish-uncased")
-
-    candidates_st = [
-        "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "intfloat/multilingual-e5-small",
-        "intfloat/multilingual-e5-base",
-        "sentence-transformers/LaBSE",
-    ]
+    # ST models: allow comma/semicolon separated local paths via ST_MODELS
+    st_env = os.environ.get("ST_MODELS", "")
+    if st_env.strip():
+        sep = ";" if ";" in st_env else ","
+        candidates_st = [s.strip() for s in st_env.split(sep) if s.strip()]
+    else:
+        candidates_st = [
+            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "intfloat/multilingual-e5-small",
+            "intfloat/multilingual-e5-base",
+            "sentence-transformers/LaBSE",
+        ]
 
     results: List[BenchmarkResult] = []
 
