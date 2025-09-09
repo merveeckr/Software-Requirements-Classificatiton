@@ -107,6 +107,20 @@ if uploaded is not None:
         preds = batch_predict(model, tokenizer, texts, MAX_LEN, threshold)
 
     work = build_editable_frame(df[[TEXT_COL] + LABEL_COLS], preds)
+    # Ensure checkbox-compatible dtypes (bool) for editor
+    try:
+        work[TEXT_COL] = work[TEXT_COL].astype(str)
+        for c in LABEL_COLS:
+            if c in work.columns:
+                work[c] = work[c].fillna(0).astype(int).astype(bool)
+            ai_c = f"AI_{c}"
+            if ai_c in work.columns:
+                work[ai_c] = work[ai_c].fillna(0).astype(int).astype(bool)
+            user_c = f"User_{c}"
+            if user_c in work.columns:
+                work[user_c] = work[user_c].fillna(0).astype(int).astype(bool)
+    except Exception:
+        pass
 
     st.subheader("Sonuçlar - Düzenlenebilir")
     edited = st.data_editor(
@@ -164,6 +178,7 @@ if uploaded is not None:
                 max_length=MAX_LEN,
                 return_tensors="pt",
             )
+            import torch  # local import
             with torch.no_grad():
                 logits = model(enc["input_ids"].to(DEVICE), enc["attention_mask"].to(DEVICE))
                 probs = torch.sigmoid(logits).cpu().numpy()[0]
