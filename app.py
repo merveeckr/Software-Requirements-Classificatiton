@@ -83,7 +83,7 @@ with st.sidebar:
     threshold = st.slider("Eşik (sigmoid)", min_value=0.05, max_value=0.95, value=float(THRESH), step=0.05)
     st.divider()
     st.markdown("**Gemma Ayarları** (opsiyonel)")
-    gemma_path = st.text_input("Gemma model yolu", value="I:\\gemma")
+    gemma_path = st.text_input("Gemma model yolu", value="C:\\pyy\\models\\gemma")
 
 uploaded = st.file_uploader("CSV yükleyin", type=["csv"])
 
@@ -232,4 +232,3 @@ if uploaded is not None:
                     st.error(f"Gemma çalıştırılamadı: {e}")
 else:
     st.write("CSV yükleyin ve analiz edin.")
-
