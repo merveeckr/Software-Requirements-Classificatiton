@@ -366,5 +366,7 @@ if uploaded is not None:
                         final_text = enforce_improvement(single_req, text, miss)
                         st.text_area("İyileştirilmiş Gereksinim", value=final_text, height=180)
                         st.info(f"Süre: {dt:.2f} sn")
+                except Exception as e:
+                    st.error(f"LLM çalıştırılamadı: {e}")
+                        
     # end uploaded path
-
