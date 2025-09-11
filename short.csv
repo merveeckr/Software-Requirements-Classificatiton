@@ -1,0 +1,33 @@
+Requirement,Appropriate,Complete,Conforming,Correct,Feasible,Necessary,Singular,Unambiguous,Verifiable
+"Sistem, Olayları veya Aktiviteleri görüntüleyecektir.",1,0,0,1,1,1,1,0,0
+"Görüntüde iki bölge olacaktır ekranın sol 2/3’ü grafiksel, sağ 1/3’ü veri tablosudur.",1,1,0,1,1,1,1,1,1
+"Hem grafikteki düğümlerde hem de tablodaki satırlarda görüntülenen veriler MSEL Özet verileri olacaktır.",1,1,0,1,1,1,1,1,1
+"Görüntünün tablo tarafı 2 bölgeye ayrılacaktır sıralı ve zamansal.",1,1,0,1,1,1,1,1,1
+"Tablonun üst 1/4’ü sıralı gerçekleşecek olayları içerecektir.",1,1,0,1,1,1,1,1,1
+"Tablonun alt 3/4’ü mevcut zamana göre ilişkili olayları içerecektir.",1,1,0,1,1,1,1,1,1
+"Sistem, olayları mevcut zamandan sapmalarına göre renk kodlarıyla gösterecektir.",1,1,0,1,1,1,1,1,1
+"Sistem, Aktivite veya Olay verilerinde yapılan değişikliklerin geçmiş raporunu sağlayacaktır.",1,1,0,1,1,1,1,1,1
+"Sistemin görünümü ve kullanılabilirliği akıllı cihazın kullanıcı arayüzü standartlarına uygun olacaktır.",1,1,1,1,1,1,1,1,1
+"Kullanıcı arayüzünde standart menüler ve gezinme butonları bulunacaktır.",1,1,1,1,1,1,1,1,1
+"Sistem, MLS’deki yeni mülk ilanlarını güncelleyecek veya oluşturacaktır.",1,1,0,1,1,1,1,1,1
+"Emlakçı, mülk kriterlerine dayalı bir CMA raporu oluşturabilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli üyeleri ders dizisine klinik dersler veya bölümler ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, başlama ayı ve yılı ile tanımlanmış yeni bir grup (cohort) ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, hemşirelik bölümüne yeni dersler ekleyebilecektir.",1,1,0,1,1,1,1,1,1
+"Bir ders, klinik olmayan veya klinik ders olabilir.",1,0,0,1,1,1,1,1,0
+"Klinik olmayan ders; ders adı, derslik ihtiyaçları ve eğitmen ihtiyaçlarını belirtecektir.",1,1,0,1,1,1,1,1,1
+"Klinik ders; ders adı, derslik ihtiyaçları, klinik saha ihtiyaçları, ders eğitmeni ihtiyaçları ve klinik laboratuvar eğitmeni ihtiyaçlarını belirtecektir.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri/Hemşirelik Personeli yeni bir Çalışma Programı (Program of Study) oluşturabilecektir.",1,1,0,1,1,1,1,1,1
+"Çalışma Programı, bir program adı ve tamamlanması gereken zorunlu derslerden (klinik ve klinik olmayan) oluşacaktır.",1,1,0,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli, Çalışma Programı için hangi derslerin zorunlu olduğunu belirleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Sistem Program Yöneticileri/Hemşirelik Personeli’nin planlama amaçları için tüm programların tüm grupları için belirli bir dönemde ihtiyaç duyulan derslerin raporunu gösterebilecektir.",1,1,1,1,1,1,0,1,1
+"Gerekli ders raporu; açılacak dersler, gereken bölüm sayısı, gereken laboratuvar sayısı ve ihtiyaç duyulan derslik türlerini içerecektir.",1,1,1,1,1,1,1,1,1
+"Belirli bir grup için dersler, gün ve saat bakımından çakışmayacaktır.",1,1,1,1,1,1,1,1,1
+"Program Yöneticileri ve Hemşirelik Personeli sisteme yeni bir klinik saha ekleyebilecektir.",1,1,1,1,1,1,1,1,1
+"Ürün, Internet Explorer 5.5 ve üzerini desteklemelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, Mozilla Firefox 1.0 ve üzerini desteklemelidir.",1,1,1,1,1,1,1,1,1
+"Ürün, Choice Parts Sistemi ile arayüz oluşturmalıdır. Bu sistem geri dönüştürülmüş parça verilerini sağlar.",1,1,1,1,1,1,1,1,1
+"Ürün, tüm ortamlarda mevcut donanım üzerinde çalışmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal Mimari yönergelere uygun olmalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal Kullanıcı Arayüzü Yönergelerine uymalıdır.",1,1,1,1,1,1,1,0,0
+"Ürün, kurumsal renk şemasına uymalıdır.",1,1,1,1,1,1,1,1,1
